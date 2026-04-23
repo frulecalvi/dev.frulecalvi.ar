@@ -191,7 +191,7 @@ const TRANSLATIONS = {
                 title: 'SELF-TAUGHT PATH',
                 desc1: 'Started in 2005, at age 13, with a CD of the old SuSE Linux that arrived home.',
                 desc2: 'Learned by reading manpages with dial-up connection. During adolescence I maintained a Linux blog and participated in forums and exchanged with the Spanish-speaking Linux bloggers community.',
-                desc3: 'My time at Escuela de Comercio Martín Zapata School (UNCuyo) introduced me to the world of web and application development, consolidating my path in programming.'
+                desc3: 'My time at Escuela de Comercio Martín Zapata (UNCuyo) introduced me to the world of web and application development, consolidating my path in programming.'
             },
             academic: {
                 title: 'ACADEMIC BACKGROUND',
