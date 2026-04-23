@@ -90,6 +90,7 @@ const TRANSLATIONS = {
                 ]
             },
             ecosintesis: {
+                role: 'Desarrollador Backend',
                 location: 'Híbrido',
                 period: '2023-Presente',
                 items: [
@@ -248,6 +249,7 @@ const TRANSLATIONS = {
                 ]
             },
             ecosintesis: {
+                role: 'Backend Developer',
                 location: 'Hybrid',
                 period: '2023-Present',
                 items: [

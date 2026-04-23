@@ -730,6 +730,10 @@ body {
     margin-bottom: 0.5rem;
 }
 
+.log-title .contact-link {
+    font-size: 1.05rem;
+}
+
 .log-entry .log-content {
     margin-top: 0.75rem;
     padding-left: 1.5ch;
@@ -786,6 +790,7 @@ body {
     border-bottom: 1px dotted var(--text-amber-dim);
     transition: all var(--transition-fast);
     padding: 0.1rem 0;
+    font-size: inherit;
 }
 
 .contact-link:hover {
