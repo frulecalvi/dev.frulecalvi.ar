@@ -514,7 +514,7 @@ const COMMANDS = {
      \\/__/         \\/__/         \\/__/    </span>`;
             
             return `<div class="neofetch-container">${ascii}<div class="neofetch-info"><strong>franco@dev</strong><span class="neofetch-separator">───────────────────</span>
-<div class="neofetch-line"><span class="neofetch-label">${labels.os}:</span><span class="neofetch-value">DEVOS v1</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.os}:</span><span class="neofetch-value">DEVOS v1.1</span></div>
 <div class="neofetch-line"><span class="neofetch-label">${labels.host}:</span><span class="neofetch-value">Franco Rule Calvi</span></div>
 <div class="neofetch-line"><span class="neofetch-label">${labels.location}:</span><span class="neofetch-value">Mendoza, AR</span></div>
 <div class="neofetch-line"><span class="neofetch-label">${labels.uptime}:</span><span class="neofetch-value">${getUptime()}</span></div>
