@@ -70,7 +70,7 @@ const TRANSLATIONS = {
             idealsur: {
                 role: 'Desarrollador Backend',
                 location: 'Remoto',
-                period: '2023-Presente',
+                period: '2023-2026',
                 items: [
                     'Optimización de procesamiento de datos a gran escala usando PHP + Bash + Python + BigQuery',
                     'Implementación de soluciones Laravel para servicios de atención al cliente',
@@ -79,7 +79,7 @@ const TRANSLATIONS = {
             },
             ecosintesis: {
                 location: 'Remoto',
-                period: 'Anterior',
+                period: '2023-Presente',
                 items: [
                     'Diseño y desarrollo de sistema de reservas multipropósito para agencias de viaje',
                     'Pipeline CI/CD automatizado con Docker + Jenkins',
@@ -214,7 +214,7 @@ const TRANSLATIONS = {
             idealsur: {
                 role: 'Backend Developer',
                 location: 'Remote',
-                period: '2023-Present',
+                period: '2023-2026',
                 items: [
                     'Optimization of large-scale data processing using PHP + Bash + Python + BigQuery',
                     'Implementation of Laravel solutions for customer service',
@@ -223,7 +223,7 @@ const TRANSLATIONS = {
             },
             ecosintesis: {
                 location: 'Remote',
-                period: 'Previous',
+                period: '2023-Present',
                 items: [
                     'Design and development of multi-purpose reservation system for travel agencies',
                     'Automated CI/CD pipeline with Docker + Jenkins',
@@ -775,8 +775,8 @@ function initScrollObserver() {
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -50px 0px'
     });
     
     sections.forEach(section => observer.observe(section));

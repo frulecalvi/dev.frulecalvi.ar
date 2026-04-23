@@ -357,6 +357,10 @@ body {
     height: 0.5rem;
 }
 
+.typewriter-spacer {
+    height: 0.75rem;
+}
+
 .hint {
     color: var(--text-dim);
     font-size: 0.9rem;
