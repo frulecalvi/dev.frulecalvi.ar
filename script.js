@@ -47,7 +47,9 @@ const TRANSLATIONS = {
                 { name: 'bash', level: 'Automatización' },
                 { name: 'jenkins', level: 'Pipelines CI/CD' },
                 { name: 'gcp', level: 'Google Cloud' },
-                { name: 'python', level: 'BigQuery, scraping y análisis de datos' }
+                { name: 'python', level: 'BigQuery, scraping y análisis de datos' },
+                { name: 'nginx/apache', level: 'Servidores web' },
+                { name: 'react/vue', level: 'Frontend básico' }
             ]
         },
         methodology: {
@@ -193,7 +195,9 @@ const TRANSLATIONS = {
                 { name: 'bash', level: 'Automation' },
                 { name: 'jenkins', level: 'CI/CD pipelines' },
                 { name: 'gcp', level: 'Google Cloud' },
-                { name: 'python', level: 'BigQuery, scraping & data analysis' }
+                { name: 'python', level: 'BigQuery, scraping & data analysis' },
+                { name: 'nginx/apache', level: 'Web servers' },
+                { name: 'react/vue', level: 'Basic frontend' }
             ]
         },
         methodology: {
