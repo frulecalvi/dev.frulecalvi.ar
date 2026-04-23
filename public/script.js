@@ -1,8 +1,3 @@
-/**
- * Terminal CLI - Carta de Presentación
- * Franco Rule Calvi
- */
-
 // ===== Translations =====
 const TRANSLATIONS = {
     es: {
