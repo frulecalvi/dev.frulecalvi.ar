@@ -2,7 +2,7 @@
 const TRANSLATIONS = {
     es: {
         boot: {
-            init: 'INICIANDO DEVOS v1.0...',
+            init: 'INICIANDO DEVOS v1.1...',
             mount: 'MONTANDO SISTEMA DE ARCHIVOS',
             loading: 'CARGANDO PERFIL',
             location: 'UBICACIÓN',
@@ -155,12 +155,12 @@ const TRANSLATIONS = {
             memory: 'Memoria'
         },
         footer: {
-            version: 'DEVOS v1.0 — Franco Rule Calvi — 2026'
+            version: 'DEVOS v1.1 — Franco Rule Calvi — 2026'
         }
     },
     en: {
         boot: {
-            init: 'INITIALIZING DEVOS v1.0...',
+            init: 'INITIALIZING DEVOS v1.1...',
             mount: 'MOUNTING FILESYSTEM',
             loading: 'LOADING PROFILE',
             location: 'LOCATION',
@@ -313,7 +313,7 @@ const TRANSLATIONS = {
             memory: 'Memory'
         },
         footer: {
-            version: 'DEVOS v1.0 — Franco Rule Calvi — 2026'
+            version: 'DEVOS v1.1 — Franco Rule Calvi — 2026'
         }
     }
 };
@@ -514,7 +514,7 @@ const COMMANDS = {
      \\/__/         \\/__/         \\/__/    </span>`;
             
             return `<div class="neofetch-container">${ascii}<div class="neofetch-info"><strong>franco@dev</strong><span class="neofetch-separator">───────────────────</span>
-<div class="neofetch-line"><span class="neofetch-label">${labels.os}:</span><span class="neofetch-value">DEVOS v1.0</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.os}:</span><span class="neofetch-value">DEVOS v1</span></div>
 <div class="neofetch-line"><span class="neofetch-label">${labels.host}:</span><span class="neofetch-value">Franco Rule Calvi</span></div>
 <div class="neofetch-line"><span class="neofetch-label">${labels.location}:</span><span class="neofetch-value">Mendoza, AR</span></div>
 <div class="neofetch-line"><span class="neofetch-label">${labels.uptime}:</span><span class="neofetch-value">${getUptime()}</span></div>
@@ -535,7 +535,7 @@ const COMMANDS = {
     uname: {
         description: () => getText('commands.uname'),
         execute: () => {
-            return 'DEVOS v1.0 franco-dev generic x86_64 GNU/Linux';
+            return 'DEVOS v1.1 franco-dev generic x86_64 GNU/Linux';
         }
     },
     
