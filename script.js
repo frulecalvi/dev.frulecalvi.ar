@@ -353,29 +353,49 @@ function initInteractiveCommands() {
         document.execCommand('insertText', false, text);
     });
     
-    // Clean any HTML that might have been inserted
+    // Clean any HTML that might have been inserted and ensure cursor at end
     inputCursor.addEventListener('input', () => {
         const text = inputCursor.textContent;
         if (inputCursor.innerHTML !== text) {
             inputCursor.textContent = text;
-            // Restore cursor position to end
-            const range = document.createRange();
-            const sel = window.getSelection();
-            range.selectNodeContents(inputCursor);
-            range.collapse(false);
-            sel.removeAllRanges();
-            sel.addRange(range);
         }
+        // Always move cursor to end after any input
+        moveCursorToEnd();
     });
     
-    inputCursor.focus();
+    // Focus on click on the command line area (not just the input)
+    const commandLine = document.querySelector('#interactive .command-line');
+    if (commandLine) {
+        commandLine.addEventListener('click', (e) => {
+            // Don't focus if selecting text
+            if (window.getSelection().toString().length === 0) {
+                inputCursor.focus({ preventScroll: true });
+                moveCursorToEnd();
+            }
+        });
+    }
     
-    // Refocus on click anywhere (without scrolling)
-    document.addEventListener('click', (e) => {
-        if (e.target !== inputCursor) {
-            inputCursor.focus({ preventScroll: true });
-        }
+    // Focus on any key press (except when typing in other inputs)
+    document.addEventListener('keydown', (e) => {
+        // Ignore if already focused, or if in an input/textarea, or modifier keys
+        if (document.activeElement === inputCursor) return;
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+        if (e.ctrlKey || e.altKey || e.metaKey) return;
+        // Ignore special keys
+        if (['Tab', 'Escape', 'F5', 'F12'].includes(e.key)) return;
+        
+        inputCursor.focus({ preventScroll: true });
+        moveCursorToEnd();
     });
+}
+
+function moveCursorToEnd() {
+    const range = document.createRange();
+    const sel = window.getSelection();
+    range.selectNodeContents(inputCursor);
+    range.collapse(false);
+    sel.removeAllRanges();
+    sel.addRange(range);
 }
 
 function handleCommandInput(e) {
@@ -417,13 +437,7 @@ function autocompleteCommand() {
     const matches = Object.keys(COMMANDS).filter(cmd => cmd.startsWith(partial));
     if (matches.length === 1) {
         inputCursor.textContent = matches[0];
-        // Move cursor to end
-        const range = document.createRange();
-        const sel = window.getSelection();
-        range.selectNodeContents(inputCursor);
-        range.collapse(false);
-        sel.removeAllRanges();
-        sel.addRange(range);
+        moveCursorToEnd();
     } else if (matches.length > 1) {
         commandOutput.classList.remove('hidden', 'error');
         const matchList = matches.map(cmd => `<span class="cmd-name">${cmd}</span>`).join(', ');
