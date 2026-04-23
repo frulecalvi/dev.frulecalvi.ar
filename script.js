@@ -14,7 +14,7 @@ const TRANSLATIONS = {
             access: 'ACCESO CONCEDIDO. BIENVENIDO, VISITANTE.',
             press: 'Presiona [ENTER] para continuar...'
         },
-        tagline: 'Desarrollador Backend | Laravel | Procesamiento de datos',
+        tagline: 'Backend Developer | Laravel | Data Processing',
         hero: {
             title: 'Franco Rule Calvi',
             role: 'Desarrollador Backend especializado en PHP, Laravel y procesamiento de datos.',
