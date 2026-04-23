@@ -113,13 +113,10 @@ const TRANSLATIONS = {
         contact: {
             email: 'email:',
             linkedin: 'linkedin:',
+            github: 'github:',
+            telegram: 'telegram:',
             location: 'ubicación:',
-            available: 'Disponible para:',
-            opportunities: [
-                'Oportunidades backend',
-                'Proyectos de optimización de datos',
-                'Colaboraciones open source'
-            ]
+            invitation: '¿Tenés un proyecto o idea en mente? Escribime y charlamos.'
         },
         commands: {
             help: 'Muestra los comandos disponibles',
@@ -272,13 +269,10 @@ const TRANSLATIONS = {
         contact: {
             email: 'email:',
             linkedin: 'linkedin:',
+            github: 'github:',
+            telegram: 'telegram:',
             location: 'location:',
-            available: 'Available for:',
-            opportunities: [
-                'Backend opportunities',
-                'Data optimization projects',
-                'Open source collaborations'
-            ]
+            invitation: 'Have a project or idea in mind? Write to me and let\'s chat.'
         },
         commands: {
             help: 'Show available commands',
