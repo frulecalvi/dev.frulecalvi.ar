@@ -57,7 +57,7 @@ const COMMANDS = {
      \\ /         <span class="cmd-name">Location:</span>  <span class="cmd-desc">Mendoza, AR</span>
       v          <span class="cmd-name">Uptime:</span>    <span class="cmd-desc">${getUptime()}</span>
                  <span class="cmd-name">Shell:</span>     <span class="cmd-desc">bash 5.1.16</span>
-                 <span class="cmd-name">Terminal:</span> <span class="cmd-desc">web-terminal</span>
+                 <span class="cmd-name">Terminal:</span>  <span class="cmd-desc">web-terminal</span>
                  <span class="cmd-name">CPU:</span>       <span class="cmd-desc">PHP Brain 8.2</span>
                  <span class="cmd-name">Memory:</span>    <span class="cmd-desc">Laravel Powered</span>`;
         }
@@ -92,7 +92,7 @@ const COMMANDS = {
         description: 'Matrix mode',
         execute: () => {
             activateMatrixMode();
-            return 'Matrix mode activated for 5 seconds...';
+            return 'Matrix mode activated for 10 seconds...';
         }
     },
     
@@ -446,11 +446,8 @@ function autocompleteCommand() {
 
 // ===== Matrix Mode =====
 function activateMatrixMode() {
-    const originalBg = document.body.style.backgroundColor;
-    const originalColor = document.body.style.color;
-    
-    document.body.style.backgroundColor = '#000000';
-    document.body.style.color = '#00ff00';
+    // No se modifica ni background ni color del texto
+    // Solo se muestra el canvas de Matrix encima
     
     // Add matrix effect
     const matrixChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
@@ -495,13 +492,20 @@ function activateMatrixMode() {
         }
     }, 50);
     
-    // Reset after 5 seconds
+    // After 7 seconds, start 3-second fade-out
     setTimeout(() => {
-        clearInterval(matrixInterval);
-        document.body.removeChild(canvas);
-        document.body.style.backgroundColor = '';
-        document.body.style.color = '';
-    }, 5000);
+        canvas.style.transition = 'opacity 3s ease-out';
+        canvas.style.opacity = '0';
+        
+        // After fade completes (3s), remove canvas
+        setTimeout(() => {
+            clearInterval(matrixInterval);
+            if (canvas.parentNode) {
+                document.body.removeChild(canvas);
+            }
+            // No se restauran colores porque nunca se cambiaron
+        }, 3000);
+    }, 7000);
 }
 
 // ===== Easter Egg: Konami Code =====
