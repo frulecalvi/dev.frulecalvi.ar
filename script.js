@@ -324,6 +324,7 @@ function getText(key) {
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem(CONFIG.languageKey, lang);
+    sessionStorage.setItem(CONFIG.languageKey, lang);
     updateLanguageUI();
 }
 
@@ -432,7 +433,8 @@ function restartVisibleTypewriters() {
 }
 
 function initLanguage() {
-    const savedLang = localStorage.getItem(CONFIG.languageKey);
+    // Intentar obtener de localStorage primero, luego sessionStorage
+    const savedLang = localStorage.getItem(CONFIG.languageKey) || sessionStorage.getItem(CONFIG.languageKey);
     if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
         currentLang = savedLang;
     } else {
@@ -536,8 +538,8 @@ const COMMANDS = {
     restart: {
         description: () => getText('commands.restart'),
         execute: () => {
-            localStorage.removeItem(CONFIG.bootSeenKey);
-            localStorage.removeItem(CONFIG.animationsEnabledKey);
+            sessionStorage.removeItem(CONFIG.bootSeenKey);
+            sessionStorage.removeItem(CONFIG.animationsEnabledKey);
             
             setTimeout(() => {
                 window.location.href = window.location.pathname + '?reboot=true';
@@ -597,21 +599,21 @@ function sleep(ms) {
 function initBootSequence() {
     const urlParams = new URLSearchParams(window.location.search);
     const isReboot = urlParams.get('reboot') === 'true';
-    const hasSeenBoot = localStorage.getItem(CONFIG.bootSeenKey);
+    const hasSeenBoot = sessionStorage.getItem(CONFIG.bootSeenKey);
     
     if (isReboot) {
         // Viene de comando restart: mostrar boot + animaciones
-        localStorage.setItem(CONFIG.animationsEnabledKey, 'true');
+        sessionStorage.setItem(CONFIG.animationsEnabledKey, 'true');
         // Limpiar URL param sin recargar
         window.history.replaceState({}, '', window.location.pathname);
         showBoot();
     } else if (!hasSeenBoot) {
         // Primera visita: mostrar boot + animaciones
-        localStorage.setItem(CONFIG.animationsEnabledKey, 'true');
+        sessionStorage.setItem(CONFIG.animationsEnabledKey, 'true');
         showBoot();
     } else {
         // F5 normal: saltear boot, texto instantáneo
-        localStorage.setItem(CONFIG.animationsEnabledKey, 'false');
+        sessionStorage.setItem(CONFIG.animationsEnabledKey, 'false');
         skipBoot();
     }
 }
@@ -651,8 +653,8 @@ function handleBootClick() {
 
 function completeBoot() {
     bootScreen.classList.add('completed');
-    localStorage.setItem(CONFIG.bootSeenKey, 'true');
-    localStorage.setItem(CONFIG.animationsEnabledKey, 'true'); // Animaciones habilitadas
+    sessionStorage.setItem(CONFIG.bootSeenKey, 'true');
+    sessionStorage.setItem(CONFIG.animationsEnabledKey, 'true'); // Animaciones habilitadas
     
     // Fade out boot screen
     bootScreen.style.opacity = '0';
@@ -673,7 +675,7 @@ function completeBoot() {
 // ===== Typewriter Effect =====
 function initTypewriter() {
     const typewriters = document.querySelectorAll('.typewriter');
-    const animationsEnabled = localStorage.getItem(CONFIG.animationsEnabledKey) === 'true';
+    const animationsEnabled = sessionStorage.getItem(CONFIG.animationsEnabledKey) === 'true';
 
     typewriters.forEach(el => {
         // Check if this typewriter has an i18n key
