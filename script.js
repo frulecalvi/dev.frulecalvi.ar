@@ -6,8 +6,9 @@
 // ===== Configuration =====
 const CONFIG = {
     bootSeenKey: 'devos_boot_seen',
-    typingSpeed: 30, // ms per character
-    typingSpeedFast: 15,
+    animationsEnabledKey: 'devos_animations_enabled',
+    typingSpeed: 20, // ms per character - más rápido
+    typingSpeedFast: 10,
     scrollThreshold: 0.2
 };
 
@@ -30,7 +31,7 @@ const COMMANDS = {
 <span class="cmd-name">uname</span>      <span class="cmd-desc">Show system name</span>
 <span class="cmd-name">sudo</span>       <span class="cmd-desc">Try to gain superuser access</span>
 <span class="cmd-name">matrix</span>     <span class="cmd-desc">Activate matrix mode</span>
-<span class="cmd-name">exit</span>       <span class="cmd-desc">Close session</span>
+<span class="cmd-name">restart</span>    <span class="cmd-desc">Reboot the system</span>
 
 <strong class="section-title">Navigation:</strong>
 <span class="cmd-desc">Scroll down to view sections</span>
@@ -96,14 +97,18 @@ const COMMANDS = {
         }
     },
     
-    exit: {
-        description: 'Close session',
+    restart: {
+        description: 'Reboot the system',
         execute: () => {
+            // Limpiar localStorage y recargar con param
+            localStorage.removeItem(CONFIG.bootSeenKey);
+            localStorage.removeItem(CONFIG.animationsEnabledKey);
+            
             setTimeout(() => {
-                document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;background:#0a0a0a;color:#33ff00;font-family:monospace;">Logout franco@dev. Session closed.</div>';
-                setTimeout(() => location.reload(), 2000);
+                window.location.href = window.location.pathname + '?reboot=true';
             }, 500);
-            return 'Logging out...';
+            
+            return 'Rebooting system...';
         }
     },
     
@@ -155,12 +160,24 @@ function sleep(ms) {
 
 // ===== Boot Sequence =====
 function initBootSequence() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const isReboot = urlParams.get('reboot') === 'true';
     const hasSeenBoot = localStorage.getItem(CONFIG.bootSeenKey);
     
-    if (hasSeenBoot) {
-        skipBoot();
-    } else {
+    if (isReboot) {
+        // Viene de comando restart: mostrar boot + animaciones
+        localStorage.setItem(CONFIG.animationsEnabledKey, 'true');
+        // Limpiar URL param sin recargar
+        window.history.replaceState({}, '', window.location.pathname);
         showBoot();
+    } else if (!hasSeenBoot) {
+        // Primera visita: mostrar boot + animaciones
+        localStorage.setItem(CONFIG.animationsEnabledKey, 'true');
+        showBoot();
+    } else {
+        // F5 normal: saltear boot, texto instantáneo
+        localStorage.setItem(CONFIG.animationsEnabledKey, 'false');
+        skipBoot();
     }
 }
 
@@ -200,6 +217,7 @@ function handleBootClick() {
 function completeBoot() {
     bootScreen.classList.add('completed');
     localStorage.setItem(CONFIG.bootSeenKey, 'true');
+    localStorage.setItem(CONFIG.animationsEnabledKey, 'true'); // Animaciones habilitadas
     
     // Fade out boot screen
     bootScreen.style.opacity = '0';
@@ -220,19 +238,27 @@ function completeBoot() {
 // ===== Typewriter Effect =====
 function initTypewriter() {
     const typewriters = document.querySelectorAll('.typewriter');
+    const animationsEnabled = localStorage.getItem(CONFIG.animationsEnabledKey) === 'true';
     
     typewriters.forEach(el => {
-        // Store original text
         const text = el.getAttribute('data-text');
         if (!text) return;
         
-        el.textContent = '';
-        el.dataset.originalText = text;
-        el.classList.add('waiting');
+        if (animationsEnabled) {
+            // MODO ANIMADO: como está ahora
+            el.textContent = '';
+            el.dataset.originalText = text;
+            el.classList.add('waiting');
+        } else {
+            // MODO INSTANTÁNEO: mostrar texto completo
+            el.textContent = text;
+            el.classList.add('completed');
+        }
     });
     
-    // Start typing visible elements
-    typeVisibleElements();
+    if (animationsEnabled) {
+        typeVisibleElements();
+    }
 }
 
 function typeVisibleElements() {
