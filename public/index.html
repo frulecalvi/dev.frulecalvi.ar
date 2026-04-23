@@ -7,7 +7,7 @@
     <title>franco@dev - Backend Developer | Laravel | Data Processing</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -33,29 +33,30 @@
 
     <!-- Main Terminal -->
     <div id="terminal" class="terminal hidden">
-        <!-- Tagline -->
-        <h1 class="tagline" data-i18n-key="tagline">Backend Developer | Laravel | Data Processing</h1>
+        <!-- Hero Header with FRC ASCII -->
+        <header class="hero-header">
+            <div class="frc-ascii">░▒▓████████▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░
+░▒▓██████▓▒░ ░▒▓███████▓▒░░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░</div>
+            <div class="hero-content">
+                <div class="hero-prompt">franco@dev:~$ whoami</div>
+                <h1 class="hero-name">Franco Rule Calvi</h1>
+                <p class="hero-tagline">
+                    <span>Backend Developer</span>
+                    <span class="separator">|</span>
+                    <span>Laravel</span>
+                    <span class="separator">|</span>
+                    <span>Data Processing</span>
+                </p>
+            </div>
+        </header>
 
-        <!-- Hero Section -->
-        <section class="section" id="hero">
-            <div class="command-line">
-                <span class="prompt">franco@dev:~$</span>
-                <span class="command">whoami</span>
-                <span class="section-separator"></span>
-            </div>
-            <div class="output">
-                <noscript>
-                    <span>> Franco Rule Calvi</span>
-                    <span>> Backend Developer especializado en PHP, Laravel y procesamiento de datos.</span>
-                    <span>> Apasionado por el pensamiento lógico, el orden y las buenas prácticas.</span>
-                    <span>> <a href="mailto:hola@frulecalvi.ar" class="contact-link">hola@frulecalvi.ar</a></span>
-                </noscript>
-                <span><strong>> Franco Rule Calvi</strong></span>
-                <div class="typewriter delay-1" data-text="> Backend Developer especializado en PHP, Laravel y procesamiento de datos." data-i18n-key="hero.role" data-prefix="> "></div>
-                <div class="typewriter delay-2" data-text="> Apasionado por el pensamiento lógico, el orden y las buenas prácticas." data-i18n-key="hero.passion" data-prefix="> "></div>
-                <span>> <a href="mailto:hola@frulecalvi.ar" class="contact-link">hola@frulecalvi.ar</a></span>
-            </div>
-        </section>
+        <!-- Legacy tagline (hidden, kept for JS compatibility) -->
+        <h1 class="tagline" data-i18n-key="tagline" style="display: none;">Backend Developer | Laravel | Data Processing</h1>
 
         <!-- About Section -->
         <section class="section" id="about">
@@ -93,25 +94,25 @@
             <div class="output">
                 <noscript>
                     <div class="formation-block">
-                        <h3># CAMINO AUTODIDACTA</h3>
-                        <div>> Inicié en 2005, a los 13 años, con un CD del viejo SuSE Linux que llegó a casa.</div>
-                        <div>> Aprendí leyendo manpages con conexión dial-up. Durante mi adolescencia mantuve un blog sobre Linux y participé en foros e intercambios con la comunidad de blogueros de Linux en español.</div>
-                        <div>> Mi paso por la Escuela de Comercio Martín Zapata (UNCuyo) me introdujo al mundo de la web y el desarrollo de aplicaciones, consolidando mi camino en la programación.</div>
+                        <h3>CAMINO AUTODIDACTA</h3>
+                        <div>Inicié en 2005, a los 13 años, con un CD del viejo SuSE Linux que llegó a casa.</div>
+                        <div>Aprendí leyendo manpages con conexión dial-up. Durante mi adolescencia mantuve un blog sobre Linux y participé en foros e intercambios con la comunidad de blogueros de Linux en español.</div>
+                        <div>Mi paso por la Escuela de Comercio Martín Zapata (UNCuyo) me introdujo al mundo de la web y el desarrollo de aplicaciones, consolidando mi camino en la programación.</div>
                     </div>
                     <div class="formation-block">
-                        <h3># FORMACIÓN ACADÉMICA</h3>
-                        <div>> Actualmente me encuentro cursando la Licenciatura en Análisis y Gestión de Datos en la Universidad Nacional de San Luis.</div>
+                        <h3>FORMACIÓN ACADÉMICA</h3>
+                        <div>Actualmente me encuentro cursando la Licenciatura en Análisis y Gestión de Datos en la Universidad Nacional de San Luis.</div>
                     </div>
                 </noscript>
                 <div class="formation-block">
                     <h3 class="typewriter" data-i18n-key="formation.selfTaught.title"></h3>
-                    <div class="typewriter delay-1" data-i18n-key="formation.selfTaught.desc1" data-prefix="> "></div>
-                    <div class="typewriter delay-2" data-i18n-key="formation.selfTaught.desc2" data-prefix="> "></div>
-                    <div class="typewriter delay-3" data-i18n-key="formation.selfTaught.desc3" data-prefix="> "></div>
+                    <div class="typewriter delay-1" data-i18n-key="formation.selfTaught.desc1"></div>
+                    <div class="typewriter delay-2" data-i18n-key="formation.selfTaught.desc2"></div>
+                    <div class="typewriter delay-3" data-i18n-key="formation.selfTaught.desc3"></div>
                 </div>
                 <div class="formation-block">
                     <h3 class="typewriter delay-2" data-i18n-key="formation.academic.title"></h3>
-                    <div class="typewriter delay-3" data-i18n-key="formation.academic.desc1" data-prefix="> "></div>
+                    <div class="typewriter delay-3" data-i18n-key="formation.academic.desc1"></div>
                 </div>
             </div>
         </section>
@@ -120,10 +121,15 @@
         <section class="section" id="stack">
             <div class="command-line">
                 <span class="prompt">franco@dev:~$</span>
-                <span class="command">ls -la stack/core/</span>
+                <span class="command">ls -la stack/</span>
                 <span class="section-separator"></span>
             </div>
             <div class="output">
+                <div class="stack-category">
+                    <span class="stack-category-icon">◈</span>
+                    <span class="stack-category-title" data-i18n-key="stack.coreTitle">Core Technologies</span>
+                    <span class="stack-category-count">7 items</span>
+                </div>
                 <noscript>
                     <div class="file-entry principal">
                         <span class="permissions">-rwxr-xr-x</span>
@@ -210,14 +216,12 @@
                     <span class="progress-bar"><span class="fill" style="width: 60%"></span></span>
                     <span class="level" data-i18n-key="stack.principal.6.level">TDD</span>
                 </div>
-            </div>
 
-            <div class="command-line spacer">
-                <span class="prompt">franco@dev:~$</span>
-                <span class="command">ls -la stack/tools/</span>
-                <span class="section-separator"></span>
-            </div>
-            <div class="output">
+                <div class="stack-category">
+                    <span class="stack-category-icon">◇</span>
+                    <span class="stack-category-title" data-i18n-key="stack.toolsTitle">Tools & Others</span>
+                    <span class="stack-category-count">6 items</span>
+                </div>
                 <noscript>
                     <div class="file-entry secondary">
                         <span class="permissions">-rwxr-xr-x</span>
@@ -305,19 +309,19 @@
             <div class="output">
                 <noscript>
                     <div class="methodology-block">
-                        <h3># PENSAMIENTO LÓGICO</h3>
+                        <h3>PENSAMIENTO LÓGICO</h3>
                         <div>Abordo los problemas analizando primero, escribiendo el código después. Una hora de diseño ahorra diez de debugging.</div>
                     </div>
                     <div class="methodology-block">
-                        <h3># BUENAS PRÁCTICAS</h3>
+                        <h3>BUENAS PRÁCTICAS</h3>
                         <div>Código limpio, documentado y testeable. Uso TDD con PHPUnit para asegurar calidad desde el inicio.</div>
                     </div>
                     <div class="methodology-block">
-                        <h3># LINUX COMO ENTORNO</h3>
+                        <h3>LINUX COMO ENTORNO</h3>
                         <div>Uso Linux diariamente. Trabajar cerca del sistema me permite entender mejor la infraestructura que sostiene las aplicaciones.</div>
                     </div>
                     <div class="methodology-block">
-                        <h3># COLABORACIÓN</h3>
+                        <h3>COLABORACIÓN</h3>
                         <div>Git para control de versiones. Apuesto a la revisión constructiva del código y la comunicación clara con el equipo.</div>
                     </div>
                 </noscript>
@@ -350,56 +354,56 @@
             <div class="output">
                 <noscript>
                     <div class="log-entry">
-                        <span class="log-title"># ECOSÍNTESIS - Mendoza (Híbrido)</span>
                         <span class="timestamp">[2023-Presente]</span>
+                        <span class="log-title"># ECOSÍNTESIS - Híbrido</span>
                         <div class="log-content">
-                            <div>> Diseño y desarrollo de sistema de reservas multipropósito</div>
-                            <div>> Pipeline CI/CD automatizado con Docker + Jenkins</div>
-                            <div>> Proyectos de web scraping usando Python, Bash, RDB, GCP</div>
+                            <div>Diseño y desarrollo de sistema de reservas multipropósito</div>
+                            <div>Pipeline CI/CD automatizado con Docker + Jenkins</div>
+                            <div>Proyectos de web scraping usando Python, Bash, RDB, GCP</div>
                         </div>
                     </div>
                     <div class="log-entry">
-                        <span class="log-title"># IDEALSUR - Desarrollador Backend (Remoto)</span>
                         <span class="timestamp">[2023-2026]</span>
+                        <span class="log-title"># IDEALSUR - Desarrollador Backend (Remoto)</span>
                         <div class="log-content">
-                            <div>> Optimización de procesamiento de datos a gran escala con PHP + Bash + BigQuery</div>
-                            <div>> Implementación de soluciones Laravel para servicios de atención al cliente</div>
-                            <div>> Mejoras en CRM corporativo optimizando código server-side</div>
+                            <div>Optimización de procesamiento de datos a gran escala con PHP + Bash + BigQuery</div>
+                            <div>Implementación de soluciones Laravel para servicios de atención al cliente</div>
+                            <div>Mejoras en CRM corporativo optimizando código server-side</div>
                         </div>
                     </div>
                     <div class="log-entry">
-                        <span class="log-title"># CIRCLAN - Desarrollador Fullstack</span>
                         <span class="timestamp">[2010-2013]</span>
+                        <span class="log-title"># CIRCLAN - Desarrollador Fullstack</span>
                         <div class="log-content">
-                            <div>> Desarrollo de sitios para diversos clientes usando WordPress, Joomla, PHP, MySQL, JS, HTML, CSS</div>
-                            <div>> Soluciones a medida permitiendo autogestión de contenido por parte de clientes</div>
+                            <div>Desarrollo de sitios para diversos clientes usando WordPress, Joomla, PHP, MySQL, JS, HTML, CSS</div>
+                            <div>Soluciones a medida permitiendo autogestión de contenido por parte de clientes</div>
                         </div>
                     </div>
                 </noscript>
                 <div class="log-entry">
-                    <span class="log-title"># <a class="contact-link" href="https://ecosintesis.com.ar" target="_blank">ECOSÍNTESIS</a> - Mendoza (<span data-i18n-key="achievements.ecosintesis.location">Híbrido</span>)</span>
                     <span class="timestamp">[<span data-i18n-key="achievements.ecosintesis.period">2023-Presente</span>]</span>
+                    <span class="log-title"># <a class="contact-link" href="https://ecosintesis.com.ar" target="_blank">ECOSÍNTESIS</a> — <span data-i18n-key="achievements.ecosintesis.location">Híbrido</span></span>
                     <div class="log-content">
-                        <div class="typewriter delay-1" data-i18n-key="achievements.ecosintesis.items.0" data-prefix="> "></div>
-                        <div class="typewriter delay-2" data-i18n-key="achievements.ecosintesis.items.1" data-prefix="> "></div>
-                        <div class="typewriter delay-2" data-i18n-key="achievements.ecosintesis.items.2" data-prefix="> "></div>
+                        <div class="typewriter delay-1" data-i18n-key="achievements.ecosintesis.items.0"></div>
+                        <div class="typewriter delay-2" data-i18n-key="achievements.ecosintesis.items.1"></div>
+                        <div class="typewriter delay-2" data-i18n-key="achievements.ecosintesis.items.2"></div>
                     </div>
                 </div>
                 <div class="log-entry">
-                    <span class="log-title"># <a class="contact-link" href="https://idealsur.com" target="_blank">IDEALSUR</a> - <span data-i18n-key="achievements.idealsur.role">Desarrollador Backend</span> (<span data-i18n-key="achievements.idealsur.location">Remoto</span>)</span>
                     <span class="timestamp">[<span data-i18n-key="achievements.idealsur.period">2023-2026</span>]</span>
+                    <span class="log-title"># <a class="contact-link" href="https://idealsur.com" target="_blank">IDEALSUR</a> — <span data-i18n-key="achievements.idealsur.role">Desarrollador Backend</span> (<span data-i18n-key="achievements.idealsur.location">Remoto</span>)</span>
                     <div class="log-content">
-                        <div class="typewriter" data-i18n-key="achievements.idealsur.items.0" data-prefix="> "></div>
-                        <div class="typewriter delay-1" data-i18n-key="achievements.idealsur.items.1" data-prefix="> "></div>
-                        <div class="typewriter delay-1" data-i18n-key="achievements.idealsur.items.2" data-prefix="> "></div>
+                        <div class="typewriter" data-i18n-key="achievements.idealsur.items.0"></div>
+                        <div class="typewriter delay-1" data-i18n-key="achievements.idealsur.items.1"></div>
+                        <div class="typewriter delay-1" data-i18n-key="achievements.idealsur.items.2"></div>
                     </div>
                 </div>
                 <div class="log-entry">
-                    <span class="log-title"># CIRCLAN - <span data-i18n-key="achievements.circlan.role">Desarrollador Fullstack</span></span>
                     <span class="timestamp">[2010-2013]</span>
+                    <span class="log-title"># CIRCLAN — <span data-i18n-key="achievements.circlan.role">Desarrollador Fullstack</span></span>
                     <div class="log-content">
-                        <div class="typewriter delay-2" data-i18n-key="achievements.circlan.items.0" data-prefix="> "></div>
-                        <div class="typewriter delay-3" data-i18n-key="achievements.circlan.items.1" data-prefix="> "></div>
+                        <div class="typewriter delay-2" data-i18n-key="achievements.circlan.items.0"></div>
+                        <div class="typewriter delay-3" data-i18n-key="achievements.circlan.items.1"></div>
                     </div>
                 </div>
             </div>
@@ -466,7 +470,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-line">
-                <span class="dim">DEVOS v1.0 - Franco Rule Calvi - 2026</span>
+                <span class="dim">DEVOS v1.0 — Franco Rule Calvi — 2026</span>
             </div>
         </footer>
     </div>

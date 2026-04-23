@@ -29,17 +29,19 @@ const TRANSLATIONS = {
         },
         formation: {
             selfTaught: {
-                title: '# CAMINO AUTODIDACTA',
+                title: 'CAMINO AUTODIDACTA',
                 desc1: 'Inicié en 2005, a los 13 años, con un CD del viejo SuSE Linux que llegó a casa.',
                 desc2: 'Aprendí leyendo manpages con conexión dial-up. Durante mi adolescencia mantuve un blog sobre Linux y participé en foros e intercambios con la comunidad de blogueros de Linux en español.',
                 desc3: 'Mi paso por la Escuela de Comercio Martín Zapata (UNCuyo) me introdujo al mundo de la web y el desarrollo de aplicaciones, consolidando mi camino en la programación.'
             },
             academic: {
-                title: '# FORMACIÓN ACADÉMICA',
+                title: 'FORMACIÓN ACADÉMICA',
                 desc1: 'Actualmente me encuentro cursando la Licenciatura en Análisis y Gestión de Datos en la Universidad Nacional de San Luis.'
             }
         },
         stack: {
+            coreTitle: 'Core Technologies',
+            toolsTitle: 'Tools & Others',
             principal: [
                 { name: 'php8', level: 'Experiencia sólida' },
                 { name: 'laravel12', level: 'Framework principal' },
@@ -60,19 +62,19 @@ const TRANSLATIONS = {
         },
         methodology: {
             logical: {
-                title: '# PENSAMIENTO LÓGICO',
+                title: 'PENSAMIENTO LÓGICO',
                 desc: 'Abordo los problemas analizando primero, escribiendo el código después. Una hora de diseño ahorra diez de debugging.'
             },
             practices: {
-                title: '# BUENAS PRÁCTICAS',
+                title: 'BUENAS PRÁCTICAS',
                 desc: 'Código limpio, documentado y testeable. Uso TDD con PHPUnit para asegurar calidad desde el inicio.'
             },
             linux: {
-                title: '# LINUX COMO ENTORNO',
+                title: 'LINUX COMO ENTORNO',
                 desc: 'Uso Linux diariamente. Trabajar cerca del sistema me permite entender mejor la infraestructura que sostiene las aplicaciones.'
             },
             collaboration: {
-                title: '# COLABORACIÓN',
+                title: 'COLABORACIÓN',
                 desc: 'Git para control de versiones. Apuesto a la revisión constructiva del código y la comunicación clara con el equipo.'
             }
         },
@@ -132,7 +134,7 @@ const TRANSLATIONS = {
             navigation: 'Navegación:',
             scrollToView: 'Desplázate hacia abajo para ver las secciones',
             contentLoads: 'Todo el contenido se carga automáticamente al hacer scroll',
-            terminalCleared: 'Terminal limpiada. Desplázate hacia abajo para recargar el contenido.',
+            terminalCleared: 'Terminal limpiada. Desplázate hacia arriba para recargar el contenido.',
             rebooting: 'Reiniciando sistema...',
             commandNotFound: 'Comando no encontrado',
             typeHelp: "Escribe '<span class=\"cmd-name\">help</span>' para ver los comandos disponibles.",
@@ -153,7 +155,7 @@ const TRANSLATIONS = {
             memory: 'Memoria'
         },
         footer: {
-            version: 'DEVOS v1.0 - Franco Rule Calvi - 2026'
+            version: 'DEVOS v1.0 — Franco Rule Calvi — 2026'
         }
     },
     en: {
@@ -185,17 +187,19 @@ const TRANSLATIONS = {
         },
         formation: {
             selfTaught: {
-                title: '# SELF-TAUGHT PATH',
+                title: 'SELF-TAUGHT PATH',
                 desc1: 'Started in 2005, at age 13, with a CD of the old SuSE Linux that arrived home.',
                 desc2: 'Learned by reading manpages with dial-up connection. During adolescence I maintained a Linux blog and participated in forums and exchanged with the Spanish-speaking Linux bloggers community.',
                 desc3: 'My time at Escuela de Comercio Martín Zapata School (UNCuyo) introduced me to the world of web and application development, consolidating my path in programming.'
             },
             academic: {
-                title: '# ACADEMIC BACKGROUND',
+                title: 'ACADEMIC BACKGROUND',
                 desc1: 'I am currently pursuing the Bachelor\'s degree in Data Analysis and Management at Universidad Nacional de San Luis.'
             }
         },
         stack: {
+            coreTitle: 'Core Technologies',
+            toolsTitle: 'Tools & Others',
             principal: [
                 { name: 'php8', level: 'Solid experience' },
                 { name: 'laravel12', level: 'Main framework' },
@@ -216,19 +220,19 @@ const TRANSLATIONS = {
         },
         methodology: {
             logical: {
-                title: '# LOGICAL THINKING',
+                title: 'LOGICAL THINKING',
                 desc: 'I approach problems by analyzing first, coding later. One hour of design saves ten hours of debugging.'
             },
             practices: {
-                title: '# BEST PRACTICES',
+                title: 'BEST PRACTICES',
                 desc: 'Clean, documented and testable code. I use TDD with PHPUnit to ensure quality from the start.'
             },
             linux: {
-                title: '# LINUX AS ENVIRONMENT',
+                title: 'LINUX AS ENVIRONMENT',
                 desc: 'I use Linux daily. Working close to the system allows me to better understand the infrastructure that supports applications.'
             },
             collaboration: {
-                title: '# COLLABORATION',
+                title: 'COLLABORATION',
                 desc: 'Git for version control. I believe in constructive code review and clear communication with the team.'
             }
         },
@@ -288,7 +292,7 @@ const TRANSLATIONS = {
             navigation: 'Navigation:',
             scrollToView: 'Scroll down to view sections',
             contentLoads: 'All content loads automatically as you scroll',
-            terminalCleared: 'Terminal cleared. Scroll down to reload content.',
+            terminalCleared: 'Terminal cleared. Scroll up to reload content.',
             rebooting: 'Rebooting system...',
             commandNotFound: 'Command not found',
             typeHelp: "Type '<span class=\"cmd-name\">help</span>' to see available commands.",
@@ -309,7 +313,7 @@ const TRANSLATIONS = {
             memory: 'Memory'
         },
         footer: {
-            version: 'DEVOS v1.0 - Franco Rule Calvi - 2026'
+            version: 'DEVOS v1.0 — Franco Rule Calvi — 2026'
         }
     }
 };
@@ -319,7 +323,7 @@ const CONFIG = {
     bootSeenKey: 'devos_boot_seen',
     animationsEnabledKey: 'devos_animations_enabled',
     languageKey: 'devos_language',
-    typingSpeed: 15, // ms per character - optimizado para SEO
+    typingSpeed: 15,
     typingSpeedFast: 10,
     scrollThreshold: 0.2
 };
@@ -349,10 +353,8 @@ function updateLanguageUI() {
         const key = el.getAttribute('data-i18n');
         const text = getText(key);
         if (text) {
-            // Preserve any child elements (like span.success)
             const spanElements = el.querySelectorAll('span');
             if (spanElements.length > 0 && el.getAttribute('data-i18n').startsWith('boot.')) {
-                // For boot lines with OK spans, rebuild content
                 const parentKey = key.replace('boot.', '');
                 const parentText = getText(`boot.${parentKey}`);
                 if (parentText) {
@@ -375,27 +377,32 @@ function updateLanguageUI() {
             const fullPrefix = prefixText ? prefixText + ' ' : prefix;
 
             if (el.classList.contains('typewriter')) {
-                // For typewriters, update data-text and reset animation
                 el.setAttribute('data-text', fullPrefix + text);
                 el.dataset.originalText = fullPrefix + text;
-                // Reset animation state
                 el.textContent = '';
                 el.classList.remove('completed', 'typing', 'animating');
                 el.classList.add('waiting');
             } else {
-                // For regular elements
                 el.textContent = fullPrefix + text;
             }
         }
     });
 
-    // Restart all visible typewriter animations
     restartVisibleTypewriters();
 
-    // Update tagline
+    // Update tagline (legacy)
     const tagline = document.querySelector('.tagline');
     if (tagline) {
         tagline.textContent = getText('tagline');
+    }
+
+    // Update hero tagline
+    const heroTagline = document.querySelector('.hero-tagline');
+    if (heroTagline) {
+        const parts = getText('tagline').split(' | ');
+        heroTagline.innerHTML = parts.map((part, i) => 
+            i === 0 ? `<span>${part}</span>` : `<span class="separator">|</span><span>${part}</span>`
+        ).join('');
     }
 
     // Update footer
@@ -407,7 +414,6 @@ function updateLanguageUI() {
     // Update lang toggle button
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
-        // Los spans están siempre en las mismas posiciones
         const esSpan = langToggle.querySelector('span[data-lang="es"]');
         const enSpan = langToggle.querySelector('span[data-lang="en"]');
         
@@ -424,19 +430,15 @@ function updateLanguageUI() {
 }
 
 function restartVisibleTypewriters() {
-    // Get all visible sections
     const sections = document.querySelectorAll('.section.visible');
 
     sections.forEach(section => {
-        // Reset all typewriters in visible sections
         const typewriters = section.querySelectorAll('.typewriter');
         typewriters.forEach((el, index) => {
-            // Reset to waiting state
             el.classList.remove('completed', 'typing', 'animating');
             el.classList.add('waiting');
             el.textContent = '';
 
-            // Restart animation with staggered delay
             setTimeout(() => {
                 if (el.classList.contains('waiting')) {
                     el.classList.remove('waiting');
@@ -448,12 +450,11 @@ function restartVisibleTypewriters() {
 }
 
 function initLanguage() {
-    // Intentar obtener de localStorage primero, luego sessionStorage
     const savedLang = localStorage.getItem(CONFIG.languageKey) || sessionStorage.getItem(CONFIG.languageKey);
     if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
         currentLang = savedLang;
     } else {
-        currentLang = 'es'; // Default to Spanish
+        currentLang = 'es';
     }
     updateLanguageUI();
 }
@@ -474,10 +475,6 @@ const COMMANDS = {
     help: {
         description: () => getText('commands.help'),
         execute: () => {
-            const labels = currentLang === 'es' ? 
-                { os: 'SO', host: 'Host', location: 'Ubicación', uptime: 'Actividad', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memoria' } :
-                { os: 'OS', host: 'Host', location: 'Location', uptime: 'Uptime', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memory' };
-            
             return `<strong class="section-title">${getText('output.availableCommands')}</strong>
 <span class="cmd-name">help</span>       <span class="cmd-desc">${getText('commands.help')}</span>
 <span class="cmd-name">neofetch</span>   <span class="cmd-desc">${getText('commands.neofetch')}</span>
@@ -504,8 +501,15 @@ const COMMANDS = {
                 { os: 'SO', host: 'Host', location: 'Ubicación', uptime: 'Actividad', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memoria' } :
                 { os: 'OS', host: 'Host', location: 'Location', uptime: 'Uptime', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memory' };
             
-            return `<div class="neofetch-container"><div class="neofetch-star">☆</div><div class="neofetch-info"><strong>franco@dev</strong>
------------
+            const ascii = `<span class="neofetch-ascii">░▒▓████████▓▒░▒▓███████▓▒░ ░▒▓██████▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░
+░▒▓██████▓▒░ ░▒▓███████▓▒░░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░
+░▒▓█▓▒░      ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░</span>`;
+            
+            return `<div class="neofetch-container">${ascii}<div class="neofetch-info"><strong>franco@dev</strong><span class="neofetch-separator">───────────────────</span>
 <div class="neofetch-line"><span class="neofetch-label">${labels.os}:</span><span class="neofetch-value">DEVOS v1.0</span></div>
 <div class="neofetch-line"><span class="neofetch-label">${labels.host}:</span><span class="neofetch-value">Franco Rule Calvi</span></div>
 <div class="neofetch-line"><span class="neofetch-label">${labels.location}:</span><span class="neofetch-value">Mendoza, AR</span></div>
@@ -615,17 +619,13 @@ function initBootSequence() {
     const hasSeenBoot = sessionStorage.getItem(CONFIG.bootSeenKey);
     
     if (isReboot) {
-        // Viene de comando restart: mostrar boot + animaciones
         sessionStorage.setItem(CONFIG.animationsEnabledKey, 'true');
-        // Limpiar URL param sin recargar
         window.history.replaceState({}, '', window.location.pathname);
         showBoot();
     } else if (!hasSeenBoot) {
-        // Primera visita: mostrar boot + animaciones
         sessionStorage.setItem(CONFIG.animationsEnabledKey, 'true');
         showBoot();
     } else {
-        // F5 normal: saltear boot, texto instantáneo
         sessionStorage.setItem(CONFIG.animationsEnabledKey, 'false');
         skipBoot();
     }
@@ -635,11 +635,9 @@ function showBoot() {
     bootScreen.style.display = 'flex';
     terminal.classList.add('hidden');
     
-    // Wait for boot animation then allow continue
     document.addEventListener('keydown', handleBootKey);
     document.addEventListener('click', handleBootClick);
     
-    // Auto-continue after 4 seconds
     setTimeout(() => {
         if (!bootScreen.classList.contains('completed')) {
             completeBoot();
@@ -652,6 +650,7 @@ function skipBoot() {
     terminal.classList.remove('hidden');
     initTypewriter();
     initScrollObserver();
+    initSectionTracker();
 }
 
 function handleBootKey(e) {
@@ -667,9 +666,8 @@ function handleBootClick() {
 function completeBoot() {
     bootScreen.classList.add('completed');
     sessionStorage.setItem(CONFIG.bootSeenKey, 'true');
-    sessionStorage.setItem(CONFIG.animationsEnabledKey, 'true'); // Animaciones habilitadas
+    sessionStorage.setItem(CONFIG.animationsEnabledKey, 'true');
     
-    // Fade out boot screen
     bootScreen.style.opacity = '0';
     bootScreen.style.transition = 'opacity 0.5s ease';
     
@@ -678,9 +676,9 @@ function completeBoot() {
         terminal.classList.remove('hidden');
         initTypewriter();
         initScrollObserver();
+        initSectionTracker();
     }, 500);
     
-    // Remove listeners
     document.removeEventListener('keydown', handleBootKey);
     document.removeEventListener('click', handleBootClick);
 }
@@ -691,12 +689,10 @@ function initTypewriter() {
     const animationsEnabled = sessionStorage.getItem(CONFIG.animationsEnabledKey) === 'true';
 
     typewriters.forEach(el => {
-        // Check if this typewriter has an i18n key
         const i18nKey = el.getAttribute('data-i18n-key');
         let text = el.getAttribute('data-text') || '';
 
         if (i18nKey) {
-            // Get translated text
             const translatedText = getText(i18nKey);
             if (translatedText) {
                 const prefix = el.getAttribute('data-prefix') || '';
@@ -704,7 +700,6 @@ function initTypewriter() {
                 const prefixText = prefixI18nKey ? getText(prefixI18nKey) : '';
                 const fullPrefix = prefixText ? prefixText + ' ' : prefix;
                 text = fullPrefix + translatedText;
-                // Update data-text attribute for future reference
                 el.setAttribute('data-text', text);
             }
         }
@@ -712,36 +707,17 @@ function initTypewriter() {
         if (!text) return;
 
         if (animationsEnabled) {
-            // MODO ANIMADO: como está ahora
             el.textContent = '';
             el.dataset.originalText = text;
             el.classList.add('waiting');
         } else {
-            // MODO INSTANTÁNEO: mostrar texto completo
             el.textContent = text;
             el.classList.add('completed');
-        }
-    });
-
-    // Las animaciones son manejadas por IntersectionObserver cuando cada sección entra en viewport
-}
-
-function typeVisibleElements() {
-    const typewriters = document.querySelectorAll('.typewriter.waiting');
-    
-    typewriters.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-        
-        if (isVisible) {
-            el.classList.remove('waiting');
-            typeElement(el);
         }
     });
 }
 
 async function typeElement(el) {
-    // Evitar reinicio si ya está animando o completado
     if (el.classList.contains('animating') || el.classList.contains('completed')) {
         return;
     }
@@ -751,7 +727,6 @@ async function typeElement(el) {
     
     el.classList.add('typing', 'animating');
     
-    // Check if it has a delay class
     let delay = 0;
     if (el.classList.contains('delay-1')) delay = 300;
     else if (el.classList.contains('delay-2')) delay = 600;
@@ -761,14 +736,12 @@ async function typeElement(el) {
         await sleep(delay);
     }
     
-    // Type each character - procesar en chunks de 2-3 caracteres para reducir reflows
     const chunkSize = 2;
     for (let i = 0; i < text.length; i += chunkSize) {
         const chunk = text.slice(i, i + chunkSize);
         currentText += chunk;
         el.textContent = currentText;
         
-        // Variable typing speed
         const speed = chunk.includes(' ') ? CONFIG.typingSpeed : 
                      Math.random() * 10 + CONFIG.typingSpeed;
         await sleep(speed);
@@ -789,13 +762,11 @@ function initScrollObserver() {
                 entry.target.classList.add('visible');
                 animatedSections.add(entry.target.id);
                 
-                // Type elements in this section - una sola vez
                 const typewriters = entry.target.querySelectorAll('.typewriter.waiting');
                 typewriters.forEach((el, index) => {
                     setTimeout(() => typeElement(el), index * 80);
                 });
                 
-                // Dejar de observar esta sección (solo animar una vez)
                 observer.unobserve(entry.target);
             }
         });
@@ -807,34 +778,52 @@ function initScrollObserver() {
     sections.forEach(section => observer.observe(section));
 }
 
+// ===== Section Tracker (Active State) =====
+function initSectionTracker() {
+    // Exclude interactive section from active tracking
+    const sections = document.querySelectorAll('.section[id]:not(#interactive)');
+    
+    // Use different settings for mobile vs desktop
+    const isMobile = window.innerWidth <= 768;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                sections.forEach(s => s.classList.remove('active'));
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: isMobile ? 0.15 : 0.25,
+        rootMargin: isMobile ? '-10% 0px -50% 0px' : '-15% 0px -55% 0px'
+    });
+    
+    sections.forEach(section => observer.observe(section));
+}
+
 // ===== Interactive Commands =====
 function initInteractiveCommands() {
     if (!inputCursor) return;
     
     inputCursor.addEventListener('keydown', handleCommandInput);
     
-    // Prevent HTML paste - only allow plain text
     inputCursor.addEventListener('paste', (e) => {
         e.preventDefault();
         const text = e.clipboardData.getData('text/plain');
         document.execCommand('insertText', false, text);
     });
     
-    // Clean any HTML that might have been inserted and ensure cursor at end
     inputCursor.addEventListener('input', () => {
         const text = inputCursor.textContent;
         if (inputCursor.innerHTML !== text) {
             inputCursor.textContent = text;
         }
-        // Always move cursor to end after any input
         moveCursorToEnd();
     });
     
-    // Focus on click on the command line area (not just the input)
     const commandLine = document.querySelector('#interactive .command-line');
     if (commandLine) {
         commandLine.addEventListener('click', (e) => {
-            // Don't focus if selecting text
             if (window.getSelection().toString().length === 0) {
                 inputCursor.focus({ preventScroll: true });
                 moveCursorToEnd();
@@ -842,13 +831,10 @@ function initInteractiveCommands() {
         });
     }
     
-    // Focus on any key press (except when typing in other inputs)
     document.addEventListener('keydown', (e) => {
-        // Ignore if already focused, or if in an input/textarea, or modifier keys
         if (document.activeElement === inputCursor) return;
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
         if (e.ctrlKey || e.altKey || e.metaKey) return;
-        // Ignore special keys
         if (['Tab', 'Escape', 'F5', 'F12'].includes(e.key)) return;
         
         inputCursor.focus({ preventScroll: true });
@@ -895,7 +881,6 @@ function executeCommand(command) {
 <span class="cmd-desc">${typeHelp}</span>`;
     }
 
-    // Scroll to show output
     setTimeout(() => {
         commandOutput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }, 100);
@@ -927,14 +912,9 @@ function initLanguageToggle() {
 
 // ===== Matrix Mode =====
 function activateMatrixMode() {
-    // No se modifica ni background ni color del texto
-    // Solo se muestra el canvas de Matrix encima
-    
-    // Add matrix effect
     const matrixChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*';
     const drops = [];
     
-    // Create canvas overlay
     const canvas = document.createElement('canvas');
     canvas.style.position = 'fixed';
     canvas.style.top = '0';
@@ -973,18 +953,15 @@ function activateMatrixMode() {
         }
     }, 50);
     
-    // After 7 seconds, start 3-second fade-out
     setTimeout(() => {
         canvas.style.transition = 'opacity 3s ease-out';
         canvas.style.opacity = '0';
         
-        // After fade completes (3s), remove canvas
         setTimeout(() => {
             clearInterval(matrixInterval);
             if (canvas.parentNode) {
                 document.body.removeChild(canvas);
             }
-            // No se restauran colores porque nunca se cambiaron
         }, 3000);
     }, 7000);
 }
@@ -1008,15 +985,10 @@ document.addEventListener('keydown', (e) => {
 
 // ===== Initialization =====
 document.addEventListener('DOMContentLoaded', () => {
-    // Marcar que JS está habilitado (oculta contenido <noscript>)
     document.body.classList.add('js-enabled');
 
     initLanguage();
     initLanguageToggle();
     initBootSequence();
     initInteractiveCommands();
-
-    // Animations are now handled only by IntersectionObserver - no need for visibility check
 });
-
-// Note: Scroll-triggered typing is handled by IntersectionObserver above
