@@ -7,7 +7,7 @@
 const CONFIG = {
     bootSeenKey: 'devos_boot_seen',
     animationsEnabledKey: 'devos_animations_enabled',
-    typingSpeed: 20, // ms per character - más rápido
+    typingSpeed: 15, // ms per character - optimizado para SEO
     typingSpeedFast: 10,
     scrollThreshold: 0.2
 };
@@ -527,6 +527,9 @@ document.addEventListener('keydown', (e) => {
 
 // ===== Initialization =====
 document.addEventListener('DOMContentLoaded', () => {
+    // Marcar que JS está habilitado (oculta contenido <noscript>)
+    document.body.classList.add('js-enabled');
+    
     initBootSequence();
     initInteractiveCommands();
     

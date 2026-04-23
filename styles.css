@@ -158,6 +158,10 @@ body {
     margin-left: 0;
 }
 
+.js-enabled noscript {
+    display: none;
+}
+
 /* ===== Typewriter Effect ===== */
 .typewriter {
     overflow: hidden;
