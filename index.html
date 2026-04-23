@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>franco@dev - Carta de Presentación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Boot Screen -->
+    <div id="boot-screen" class="boot-screen">
+        <div class="boot-content">
+            <div class="boot-line">INITIALIZING DEVOS v1.0...</div>
+            <div class="boot-line">MOUNTING FILESYSTEM... <span class="success">[OK]</span></div>
+            <div class="boot-line">LOADING PROFILE: franco_rule_calvi... <span class="success">[OK]</span></div>
+            <div class="boot-line">LOCATION: Mendoza, AR... <span class="success">[OK]</span></div>
+            <div class="boot-line">ACCESS GRANTED. WELCOME, VISITOR.</div>
+            <div class="boot-line">&nbsp;</div>
+            <div class="boot-line blink">Press [ENTER] to continue...</div>
+        </div>
+    </div>
+
+    <!-- Main Terminal -->
+    <div id="terminal" class="terminal hidden">
+        <!-- Hero Section -->
+        <section class="section" id="hero">
+            <div class="command-line">
+                <span class="prompt">franco@dev:~$</span>
+                <span class="command">whoami</span>
+            </div>
+            <div class="output">
+                <div class="typewriter" data-text="> Franco Rule Calvi"></div>
+                <div class="typewriter delay-1" data-text="> Backend Developer especializado en PHP, Laravel y arquitectura de datos."></div>
+                <div class="typewriter delay-2" data-text="> Apasionado por el pensamiento lógico, el orden y las buenas prácticas."></div>
+                <div class="typewriter delay-3" data-text="> +54 9 261 586 2959 | frulecalvi@gmail.com"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="command-line">
+                <span class="prompt">franco@dev:~$</span>
+                <span class="command">cat about.txt</span>
+            </div>
+            <div class="output">
+                <div class="typewriter" data-text="La curiosidad es mi motor principal. No me conformo con 'que funcione' - quiero entender POR QUÉ funciona."></div>
+                <div class="typewriter delay-1" data-text=" "></div>
+                <div class="typewriter delay-1" data-text="Soy un firme creyente de que el compromiso y la empatía son los mejores aliados en el trabajo en equipo. Programar no es solo escribir código: es resolver problemas reales de forma elegante y mantenible."></div>
+                <div class="typewriter delay-2" data-text=" "></div>
+                <div class="typewriter delay-2" data-text="En el código encuentro el equilibrio perfecto entre lógica, creatividad y utilidad. Cada proyecto es una oportunidad de desafiarme y crecer profesionalmente."></div>
+                <div class="typewriter delay-3" data-text=" "></div>
+                <div class="typewriter delay-3" data-text="Ubicación: Mendoza, Argentina"></div>
+                <div class="typewriter delay-3" data-text="Idiomas: Español (nativo) | English (upper-intermediate)"></div>
+            </div>
+        </section>
+
+        <!-- Stack Section -->
+        <section class="section" id="stack">
+            <div class="command-line">
+                <span class="prompt">franco@dev:~$</span>
+                <span class="command">ls -la stack/principal/</span>
+            </div>
+            <div class="output">
+                <div class="file-entry principal">
+                    <span class="permissions">-rwxr-xr-x</span>
+                    <span class="filename">php8</span>
+                    <span class="progress-bar"><span class="fill" style="width: 100%"></span></span>
+                    <span class="level">Experiencia sólida</span>
+                </div>
+                <div class="file-entry principal">
+                    <span class="permissions">-rwxr-xr-x</span>
+                    <span class="filename">laravel12</span>
+                    <span class="progress-bar"><span class="fill" style="width: 100%"></span></span>
+                    <span class="level">Framework principal</span>
+                </div>
+                <div class="file-entry principal">
+                    <span class="permissions">-rwxr-xr-x</span>
+                    <span class="filename">mysql</span>
+                    <span class="progress-bar"><span class="fill" style="width: 90%"></span></span>
+                    <span class="level">Diseño y optimización</span>
+                </div>
+                <div class="file-entry principal">
+                    <span class="permissions">-rwxr-xr-x</span>
+                    <span class="filename">linux</span>
+                    <span class="progress-bar"><span class="fill" style="width: 80%"></span></span>
+                    <span class="level">Daily driver</span>
+                </div>
+                <div class="file-entry principal">
+                    <span class="permissions">-rwxr-xr-x</span>
+                    <span class="filename">git</span>
+                    <span class="progress-bar"><span class="fill" style="width: 85%"></span></span>
+                    <span class="level">Colaboración</span>
+                </div>
+            </div>
+
+            <div class="command-line spacer">
+                <span class="prompt">franco@dev:~$</span>
+                <span class="command">ls -la stack/secundario/</span>
+            </div>
+            <div class="output">
+                <div class="file-entry secondary">
+                    <span class="permissions">-rw-r--r--</span>
+                    <span class="filename">python</span>
+                    <span class="progress-bar"><span class="fill" style="width: 60%"></span></span>
+                    <span class="level">BigQuery & scraping</span>
+                </div>
+                <div class="file-entry secondary">
+                    <span class="permissions">-rw-r--r--</span>
+                    <span class="filename">bash</span>
+                    <span class="progress-bar"><span class="fill" style="width: 55%"></span></span>
+                    <span class="level">Automatización</span>
+                </div>
+                <div class="file-entry secondary">
+                    <span class="permissions">-rw-r--r--</span>
+                    <span class="filename">docker</span>
+                    <span class="progress-bar"><span class="fill" style="width: 45%"></span></span>
+                    <span class="level">Contenedores</span>
+                </div>
+                <div class="file-entry secondary">
+                    <span class="permissions">-rw-r--r--</span>
+                    <span class="filename">jenkins</span>
+                    <span class="progress-bar"><span class="fill" style="width: 45%"></span></span>
+                    <span class="level">CI/CD pipelines</span>
+                </div>
+                <div class="file-entry secondary">
+                    <span class="permissions">-rw-r--r--</span>
+                    <span class="filename">gcp</span>
+                    <span class="progress-bar"><span class="fill" style="width: 35%"></span></span>
+                    <span class="level">Google Cloud</span>
+                </div>
+                <div class="file-entry secondary">
+                    <span class="permissions">-rw-r--r--</span>
+                    <span class="filename">phpunit</span>
+                    <span class="progress-bar"><span class="fill" style="width: 50%"></span></span>
+                    <span class="level">TDD</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="section" id="methodology">
+            <div class="command-line">
+                <span class="prompt">franco@dev:~$</span>
+                <span class="command">cat methodology.md</span>
+            </div>
+            <div class="output">
+                <div class="methodology-block">
+                    <h3 class="typewriter" data-text="PENSAMIENTO LÓGICO"></h3>
+                    <div class="typewriter delay-1" data-text="Abordo los problemas analizando primero, codificando después. Una hora de diseño ahorra diez de debugging."></div>
+                </div>
+                <div class="methodology-block">
+                    <h3 class="typewriter delay-1" data-text="BUENAS PRÁCTICAS"></h3>
+                    <div class="typewriter delay-2" data-text="Código limpio, documentado y testeable. Uso TDD con PHPUnit para asegurar calidad desde el inicio."></div>
+                </div>
+                <div class="methodology-block">
+                    <h3 class="typewriter delay-2" data-text="LINUX COMO ENTORNO"></h3>
+                    <div class="typewriter delay-3" data-text="Uso Linux diariamente. Trabajar cerca del sistema me permite entender mejor la infraestructura que sostiene las aplicaciones."></div>
+                </div>
+                <div class="methodology-block">
+                    <h3 class="typewriter delay-3" data-text="COLABORACIÓN"></h3>
+                    <div class="typewriter delay-3" data-text="Git para control de versiones. Creo en el código review constructivo y la comunicación clara con el equipo."></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="section" id="achievements">
+            <div class="command-line">
+                <span class="prompt">franco@dev:~$</span>
+                <span class="command">cat achievements.log</span>
+            </div>
+            <div class="output">
+                <div class="log-entry">
+                    <span class="timestamp">[2023-Present]</span>
+                    <span class="log-title">IDEALSUR - Backend Developer (Remoto)</span>
+                    <div class="log-content">
+                        <div class="typewriter" data-text="> Optimización de procesamiento de datos a gran escala usando PHP + Bash + Python + BigQuery"></div>
+                        <div class="typewriter delay-1" data-text="> Implementación de soluciones Laravel para servicios de atención al cliente"></div>
+                        <div class="typewriter delay-1" data-text="> Mejoras en CRM corporativo optimizando código server-side"></div>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <span class="timestamp">[Previo]</span>
+                    <span class="log-title">ECOSÍNTESIS - Mendoza (Remoto)</span>
+                    <div class="log-content">
+                        <div class="typewriter delay-1" data-text="> Diseño y desarrollo de sistema de reservas multipropósito para agencias de viaje"></div>
+                        <div class="typewriter delay-2" data-text="> Pipeline CI/CD automatizado con Docker + Jenkins"></div>
+                        <div class="typewriter delay-2" data-text="> Proyectos de web scraping usando Python, Bash, RDB, GCP"></div>
+                    </div>
+                </div>
+                <div class="log-entry">
+                    <span class="timestamp">[2010-2013]</span>
+                    <span class="log-title">CIRCLAN - Fullstack Developer</span>
+                    <div class="log-content">
+                        <div class="typewriter delay-2" data-text="> Desarrollo de sitios para diversos clientes usando WordPress, Joomla, PHP, MySQL, JS, HTML, CSS"></div>
+                        <div class="typewriter delay-3" data-text="> Soluciones a medida permitiendo autogestión de contenido por parte de clientes"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="command-line">
+                <span class="prompt">franco@dev:~$</span>
+                <span class="command">./contact --connect</span>
+            </div>
+            <div class="output">
+                <div class="contact-line">
+                    <span class="contact-label">email:</span>    <a href="mailto:frulecalvi@gmail.com" class="contact-link">frulecalvi@gmail.com</a>
+                </div>
+                <div class="contact-line">
+                    <span class="contact-label">phone:</span>    <span class="contact-value">+54 9 261 586 2959</span>
+                </div>
+                <div class="contact-line">
+                    <span class="contact-label">linkedin:</span> <a href="https://linkedin.com/in/frulecalvi" target="_blank" class="contact-link">linkedin.com/in/frulecalvi</a>
+                </div>
+                <div class="contact-line">
+                    <span class="contact-label">location:</span> <span class="contact-value">Mendoza, Argentina</span>
+                </div>
+                <div class="typewriter spacer-text" data-text=" "></div>
+                <div class="typewriter" data-text="Disponible para:"></div>
+                <div class="typewriter delay-1" data-text="- Oportunidades backend (PHP/Laravel)"></div>
+                <div class="typewriter delay-1" data-text="- Proyectos de optimización de datos"></div>
+                <div class="typewriter delay-1" data-text="- Colaboraciones open source"></div>
+                <div class="typewriter spacer-text" data-text=" "></div>
+                <div class="typewriter delay-2 hint" data-text="[Ejecuta: help para ver comandos disponibles]"></div>
+            </div>
+        </section>
+
+        <!-- Interactive Prompt -->
+        <section class="section interactive" id="interactive">
+            <div class="command-line">
+                <span class="prompt">franco@dev:~$</span>
+                <span class="input-cursor" contenteditable="true" spellcheck="false"></span><span class="cursor">_</span>
+            </div>
+            <div id="command-output" class="output hidden"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-line">
+                <span class="dim">DEVOS v1.0 - Franco Rule Calvi - 2024</span>
+            </div>
+            <div class="footer-line">
+                <span class="dim">Type 'help' for available commands</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

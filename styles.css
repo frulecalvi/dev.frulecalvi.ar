@@ -1,0 +1,479 @@
+/* ===== CSS Variables ===== */
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-tertiary: #1a1a1a;
+    --text-amber: #ffb000;
+    --text-amber-dim: #cc8800;
+    --text-amber-bright: #ffcc00;
+    --text-cyan: #00d4ff;
+    --text-dim: #666666;
+    --text-dimmer: #444444;
+    --text-white: #eeeeee;
+    --error: #ff3333;
+    --success: #33ff00;
+    
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+    --cursor-blink: blink 1s step-end infinite;
+}
+
+/* ===== Reset & Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-mono);
+    background-color: var(--bg-primary);
+    color: var(--text-amber);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ===== Boot Screen ===== */
+.boot-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.boot-content {
+    max-width: 600px;
+    width: 100%;
+}
+
+.boot-line {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.boot-line:nth-child(1) { animation-delay: 0.2s; }
+.boot-line:nth-child(2) { animation-delay: 0.6s; }
+.boot-line:nth-child(3) { animation-delay: 1.0s; }
+.boot-line:nth-child(4) { animation-delay: 1.4s; }
+.boot-line:nth-child(5) { animation-delay: 1.8s; }
+.boot-line:nth-child(6) { animation-delay: 2.2s; }
+.boot-line:nth-child(7) { animation-delay: 2.6s; }
+
+.boot-line .success {
+    color: var(--success);
+}
+
+.boot-line.blink {
+    animation: fadeIn 0.3s ease forwards, blink 1s step-end infinite;
+    animation-delay: 2.6s, 3s;
+}
+
+/* ===== Terminal ===== */
+.terminal {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+.terminal.hidden {
+    display: none;
+}
+
+/* ===== Sections ===== */
+.section {
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== Command Line ===== */
+.command-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.command-line.spacer {
+    margin-top: 1.5rem;
+}
+
+.prompt {
+    color: var(--text-cyan);
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.command {
+    color: var(--text-white);
+}
+
+/* ===== Output ===== */
+.output {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* ===== Typewriter Effect ===== */
+.typewriter {
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.typewriter.typing {
+    animation: typing 0.05s steps(1, end);
+}
+
+.typewriter.completed {
+    border-right: none;
+}
+
+/* Delays for staggered animations */
+.delay-1 { animation-delay: 0.8s !important; }
+.delay-2 { animation-delay: 1.6s !important; }
+.delay-3 { animation-delay: 2.4s !important; }
+
+/* ===== File Entries (Stack Section) ===== */
+.file-entry {
+    display: grid;
+    grid-template-columns: 120px 120px 150px 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--bg-tertiary);
+    transition: background-color 0.2s ease;
+}
+
+.file-entry:hover {
+    background-color: var(--bg-secondary);
+}
+
+.file-entry .permissions {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+}
+
+.file-entry .filename {
+    color: var(--text-amber);
+    font-weight: 700;
+}
+
+.file-entry.secondary .filename {
+    color: var(--text-amber-dim);
+}
+
+.progress-bar {
+    display: inline-block;
+    width: 100px;
+    height: 8px;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--text-dimmer);
+    position: relative;
+}
+
+.progress-bar .fill {
+    display: block;
+    height: 100%;
+    background-color: var(--text-amber);
+    transition: width 1s ease;
+}
+
+.file-entry.secondary .progress-bar .fill {
+    background-color: var(--text-amber-dim);
+}
+
+.file-entry .level {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+}
+
+/* ===== Methodology Blocks ===== */
+.methodology-block {
+    margin-bottom: 1.25rem;
+}
+
+.methodology-block h3 {
+    color: var(--text-cyan);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: 1px;
+}
+
+.methodology-block div {
+    color: var(--text-amber);
+    padding-left: 1rem;
+}
+
+/* ===== Log Entries (Achievements) ===== */
+.log-entry {
+    margin-bottom: 1.5rem;
+    padding: 0.75rem;
+    background-color: var(--bg-secondary);
+    border-left: 3px solid var(--text-amber);
+}
+
+.log-entry .timestamp {
+    color: var(--text-cyan);
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+}
+
+.log-entry .log-title {
+    color: var(--text-amber-bright);
+    font-weight: 700;
+}
+
+.log-entry .log-content {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
+.log-entry .log-content div {
+    color: var(--text-amber);
+    margin-bottom: 0.25rem;
+}
+
+/* ===== Contact Section ===== */
+.contact-line {
+    margin-bottom: 0.5rem;
+}
+
+.contact-label {
+    color: var(--text-cyan);
+}
+
+.contact-value {
+    color: var(--text-amber);
+}
+
+.contact-link {
+    color: var(--text-amber);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--text-amber-dim);
+    transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--text-amber-bright);
+    border-bottom-style: solid;
+    background-color: var(--bg-secondary);
+}
+
+.spacer-text {
+    height: 0.5rem;
+}
+
+.hint {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* ===== Interactive Section ===== */
+.section.interactive {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--bg-tertiary);
+}
+
+.input-cursor {
+    outline: none;
+    color: var(--text-white);
+    caret-color: transparent;
+    display: inline;
+    margin-left: 0;
+    min-width: 1px;
+}
+
+.cursor {
+    display: inline-block;
+    color: var(--text-amber);
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+    font-weight: 700;
+    min-width: 12px;
+    text-align: center;
+}
+
+#command-output {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background-color: var(--bg-secondary);
+    border-left: 2px solid var(--text-cyan);
+    white-space: pre-wrap;
+    font-family: var(--font-mono);
+    line-height: 1.8;
+}
+
+#command-output.hidden {
+    display: none;
+}
+
+#command-output.error {
+    border-left-color: var(--error);
+}
+
+#command-output .section-title {
+    color: var(--text-cyan);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+#command-output .cmd-name {
+    color: var(--text-amber-bright);
+    font-weight: 700;
+}
+
+#command-output .cmd-desc {
+    color: var(--text-dim);
+}
+
+#command-output strong {
+    font-weight: 700;
+    color: var(--text-amber-bright);
+}
+
+/* ===== Footer ===== */
+.footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--bg-tertiary);
+    text-align: center;
+}
+
+.footer-line {
+    margin-bottom: 0.25rem;
+}
+
+.dim {
+    color: var(--text-dimmer);
+    font-size: 0.85rem;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+}
+
+/* ===== Scrollbar Styling ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-amber-dim);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-amber);
+}
+
+/* ===== Selection ===== */
+::selection {
+    background-color: var(--text-amber);
+    color: var(--bg-primary);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .terminal {
+        padding: 1rem;
+    }
+    
+    .file-entry {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+    
+    .file-entry .permissions,
+    .file-entry .level {
+        font-size: 0.8rem;
+    }
+    
+    .contact-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .boot-content {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+    
+    .command-line {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+    .boot-screen,
+    .section.interactive,
+    .footer {
+        display: none !important;
+    }
+    
+    .terminal {
+        padding: 1rem;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
