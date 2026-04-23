@@ -18,7 +18,7 @@ const TRANSLATIONS = {
             title: 'Franco Rule Calvi',
             role: 'Desarrollador Backend especializado en PHP, Laravel y arquitectura de datos.',
             passion: 'Apasionado por el pensamiento lógico, el orden y las buenas prácticas.',
-            email: 'frulecalvi@gmail.com'
+            email: 'hola@frulecalvi.ar'
         },
         about: {
             curiosity: 'La curiosidad es mi motor principal. No me conformo con "que funcione" - quiero entender POR QUÉ funciona.',
@@ -81,7 +81,7 @@ const TRANSLATIONS = {
                 location: 'Remoto',
                 period: '2023-Presente',
                 items: [
-                    'Diseño y desarrollo de sistema de reservas multipropósito para agencias de viaje',
+                    'Diseño y desarrollo de sistema de reservas multipropósito',
                     'Pipeline CI/CD automatizado con Docker + Jenkins',
                     'Proyectos de web scraping usando Python, Bash, RDB, GCP'
                 ]
@@ -162,7 +162,7 @@ const TRANSLATIONS = {
             title: 'Franco Rule Calvi',
             role: 'Backend Developer specialized in PHP, Laravel and data architecture.',
             passion: 'Passionate about logical thinking, order and best practices.',
-            email: 'frulecalvi@gmail.com'
+            email: 'hola@frulecalvi.ar'
         },
         about: {
             curiosity: 'Curiosity is my main driver. I don\'t settle for "it works" - I want to understand WHY it works.',
@@ -225,7 +225,7 @@ const TRANSLATIONS = {
                 location: 'Remote',
                 period: '2023-Present',
                 items: [
-                    'Design and development of multi-purpose reservation system for travel agencies',
+                    'Design and development of multi-purpose reservation system',
                     'Automated CI/CD pipeline with Docker + Jenkins',
                     'Web scraping projects using Python, Bash, RDB, GCP'
                 ]
@@ -454,11 +454,7 @@ const COMMANDS = {
 <span class="cmd-name">uname</span>      <span class="cmd-desc">${getText('commands.uname')}</span>
 <span class="cmd-name">sudo</span>       <span class="cmd-desc">${getText('commands.sudo')}</span>
 <span class="cmd-name">matrix</span>     <span class="cmd-desc">${getText('commands.matrix')}</span>
-<span class="cmd-name">restart</span>    <span class="cmd-desc">${getText('commands.restart')}</span>
-
-<strong class="section-title">${getText('output.navigation')}</strong>
-<span class="cmd-desc">${getText('output.scrollToView')}</span>
-<span class="cmd-desc">${getText('output.contentLoads')}</span>`;
+<span class="cmd-name">restart</span>    <span class="cmd-desc">${getText('commands.restart')}</span>`;
         }
     },
     
@@ -477,16 +473,16 @@ const COMMANDS = {
                 { os: 'SO', host: 'Host', location: 'Ubicación', uptime: 'Actividad', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memoria' } :
                 { os: 'OS', host: 'Host', location: 'Location', uptime: 'Uptime', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memory' };
             
-            return `<strong>    .---.        franco@dev</strong>
-<strong>   /     \\       -----------</strong>
-   \\     /       <span class="cmd-name">${labels.os}:</span>        <span class="cmd-desc">DEVOS v1.0</span>
-    \\   /        <span class="cmd-name">${labels.host}:</span>      <span class="cmd-desc">Franco Rule Calvi</span>
-     \\ /         <span class="cmd-name">${labels.location}:</span>  <span class="cmd-desc">Mendoza, AR</span>
-       v          <span class="cmd-name">${labels.uptime}:</span>    <span class="cmd-desc">${getUptime()}</span>
-                 <span class="cmd-name">${labels.shell}:</span>     <span class="cmd-desc">bash 5.1.16</span>
-                 <span class="cmd-name">${labels.terminal}:</span>  <span class="cmd-desc">web-terminal</span>
-                 <span class="cmd-name">${labels.cpu}:</span>       <span class="cmd-desc">PHP Brain 8.2</span>
-                 <span class="cmd-name">${labels.memory}:</span>    <span class="cmd-desc">Laravel Powered</span>`;
+            return `<div class="neofetch-container"><div class="neofetch-star">☆</div><div class="neofetch-info"><strong>franco@dev</strong>
+-----------
+<div class="neofetch-line"><span class="neofetch-label">${labels.os}:</span><span class="neofetch-value">DEVOS v1.0</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.host}:</span><span class="neofetch-value">Franco Rule Calvi</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.location}:</span><span class="neofetch-value">Mendoza, AR</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.uptime}:</span><span class="neofetch-value">${getUptime()}</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.shell}:</span><span class="neofetch-value">bash 5.1.16</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.terminal}:</span><span class="neofetch-value">web-terminal</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.cpu}:</span><span class="neofetch-value">PHP Brain 8.2</span></div>
+<div class="neofetch-line"><span class="neofetch-label">${labels.memory}:</span><span class="neofetch-value">Laravel Powered</span></div></div></div>`;
         }
     },
     
