@@ -25,7 +25,6 @@ const COMMANDS = {
         execute: () => {
             return `<strong class="section-title">Available commands:</strong>
 <span class="cmd-name">help</span>       <span class="cmd-desc">Show this help message</span>
-<span class="cmd-name">clear</span>      <span class="cmd-desc">Clear the terminal</span>
 <span class="cmd-name">neofetch</span>   <span class="cmd-desc">Display system information</span>
 <span class="cmd-name">uptime</span>     <span class="cmd-desc">Show system uptime</span>
 <span class="cmd-name">uname</span>      <span class="cmd-desc">Show system name</span>

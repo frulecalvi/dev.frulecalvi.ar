@@ -8,7 +8,7 @@
     --text-amber-bright: #ffcc00;
     --text-cyan: #00d4ff;
     --text-dim: #666666;
-    --text-dimmer: #444444;
+    --text-dimmer: #666666;
     --text-white: #eeeeee;
     --error: #ff3333;
     --success: #33ff00;
@@ -113,7 +113,29 @@ body {
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.75rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+}
+
+.section-separator {
+    flex-grow: 1;
+    position: relative;
+    height: 1em;
+    margin-left: 0.5rem;
+    min-width: 20px;
+}
+
+.section-separator::after {
+    content: "▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.7rem;
+    color: var(--text-dimmer);
+    opacity: 0.4;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    letter-spacing: 0;
 }
 
 .command-line.spacer {
