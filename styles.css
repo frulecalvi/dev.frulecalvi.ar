@@ -263,6 +263,8 @@ body {
 
 .contact-label {
     color: var(--text-cyan);
+    display: inline-block;
+    min-width: 90px;
 }
 
 .contact-value {
