@@ -244,6 +244,7 @@ body {
 .delay-1 { animation-delay: 0.8s !important; }
 .delay-2 { animation-delay: 1.6s !important; }
 .delay-3 { animation-delay: 2.4s !important; }
+.delay-4 { animation-delay: 3.2s !important; }
 
 /* ===== File Entries (Stack Section) ===== */
 .file-entry {
