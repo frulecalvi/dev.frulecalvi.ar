@@ -329,7 +329,7 @@ body {
     border-left: 2px solid var(--text-cyan);
     white-space: pre-wrap;
     font-family: var(--font-mono);
-    line-height: 1.8;
+    line-height: 1.5;
 }
 
 #command-output.hidden {

@@ -256,9 +256,7 @@ function initTypewriter() {
         }
     });
     
-    if (animationsEnabled) {
-        typeVisibleElements();
-    }
+    // Las animaciones son manejadas por IntersectionObserver cuando cada sección entra en viewport
 }
 
 function typeVisibleElements() {
@@ -276,55 +274,67 @@ function typeVisibleElements() {
 }
 
 async function typeElement(el) {
+    // Evitar reinicio si ya está animando o completado
+    if (el.classList.contains('animating') || el.classList.contains('completed')) {
+        return;
+    }
+    
     const text = el.dataset.originalText;
     let currentText = '';
     
-    el.classList.add('typing');
+    el.classList.add('typing', 'animating');
     
     // Check if it has a delay class
     let delay = 0;
-    if (el.classList.contains('delay-1')) delay = 400;
-    else if (el.classList.contains('delay-2')) delay = 800;
-    else if (el.classList.contains('delay-3')) delay = 1200;
+    if (el.classList.contains('delay-1')) delay = 300;
+    else if (el.classList.contains('delay-2')) delay = 600;
+    else if (el.classList.contains('delay-3')) delay = 900;
     
     if (delay > 0) {
         await sleep(delay);
     }
     
-    // Type each character
-    for (let i = 0; i < text.length; i++) {
-        currentText += text[i];
+    // Type each character - procesar en chunks de 2-3 caracteres para reducir reflows
+    const chunkSize = 2;
+    for (let i = 0; i < text.length; i += chunkSize) {
+        const chunk = text.slice(i, i + chunkSize);
+        currentText += chunk;
         el.textContent = currentText;
         
         // Variable typing speed
-        const speed = text[i] === ' ' ? CONFIG.typingSpeed : 
-                     Math.random() * 20 + CONFIG.typingSpeed;
+        const speed = chunk.includes(' ') ? CONFIG.typingSpeed : 
+                     Math.random() * 10 + CONFIG.typingSpeed;
         await sleep(speed);
     }
     
-    el.classList.remove('typing');
+    el.classList.remove('typing', 'animating');
     el.classList.add('completed');
 }
 
 // ===== Scroll Observer =====
 function initScrollObserver() {
     const sections = document.querySelectorAll('.section');
+    const animatedSections = new Set();
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && !animatedSections.has(entry.target.id)) {
                 entry.target.classList.add('visible');
+                animatedSections.add(entry.target.id);
                 
-                // Type elements in this section
+                // Type elements in this section - una sola vez
                 const typewriters = entry.target.querySelectorAll('.typewriter.waiting');
                 typewriters.forEach((el, index) => {
-                    setTimeout(() => typeElement(el), index * 100);
+                    setTimeout(() => typeElement(el), index * 80);
                 });
+                
+                // Dejar de observar esta sección (solo animar una vez)
+                observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: CONFIG.scrollThreshold,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -100px 0px'
     });
     
     sections.forEach(section => observer.observe(section));
@@ -503,17 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initBootSequence();
     initInteractiveCommands();
     
-    // Handle visibility change (pause/resume animations)
-    document.addEventListener('visibilitychange', () => {
-        if (!document.hidden) {
-            typeVisibleElements();
-        }
-    });
+    // Animations are now handled only by IntersectionObserver - no need for visibility check
 });
 
-// ===== Scroll-triggered typing on scroll =====
-let scrollTimeout;
-window.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(typeVisibleElements, 100);
-});
+// Note: Scroll-triggered typing is handled by IntersectionObserver above
