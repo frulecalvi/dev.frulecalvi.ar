@@ -264,7 +264,7 @@ body {
 .contact-label {
     color: var(--text-cyan);
     display: inline-block;
-    min-width: 90px;
+    min-width: 110px;
 }
 
 .contact-value {
@@ -436,8 +436,31 @@ body {
     }
     
     .file-entry {
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
+        display: grid;
+        grid-template-columns: 90px 100px 100px 1fr;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        align-items: center;
+    }
+    
+    .file-entry .permissions {
+        font-size: 0.75rem;
+    }
+    
+    .file-entry .filename {
+        font-size: 0.85rem;
+    }
+    
+    .file-entry .progress-bar {
+        width: 90px;
+        height: 6px;
+    }
+    
+    .file-entry .level {
+        font-size: 0.8rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
     
     .file-entry .permissions,
