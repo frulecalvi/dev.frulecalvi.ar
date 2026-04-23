@@ -25,13 +25,24 @@ const TRANSLATIONS = {
             curiosity: 'La curiosidad es mi motor principal. No me conformo con "que funcione" - quiero entender POR QUÉ funciona.',
             teamwork: 'Soy un firme creyente de que el compromiso y la empatía son los mejores aliados en el trabajo en equipo. Programar no es solo escribir código: es resolver problemas reales de forma elegante y mantenible.',
             balance: 'En el código encuentro el equilibrio perfecto entre lógica, creatividad y utilidad. Cada proyecto es una oportunidad de desafiarme y crecer profesionalmente.',
-            studies: 'Actualmente me encuentro estudiando Licenciatura en Análisis y Gestión de Datos en la Universidad Nacional de San Luis.',
             locationLabel: 'Ubicación:',
             location: 'Mendoza, Argentina',
             locationFull: 'Mendoza, Argentina',
             languagesLabel: 'Idiomas:',
             languages: 'Español (nativo) | Inglés (intermedio-avanzado)',
             languagesFull: 'Español (nativo) | Inglés (intermedio-avanzado)'
+        },
+        formation: {
+            selfTaught: {
+                title: '# CAMINO AUTODIDACTA',
+                desc1: 'Inicié en 2005, a los 13 años, con un CD del viejo SuSE Linux que llegó a casa.',
+                desc2: 'Aprendí leyendo manpages con conexión dial-up. Durante mi adolescencia mantuve un blog sobre Linux y participé en foros e intercambios con la comunidad de blogueros de Linux en español.',
+                desc3: 'Mi paso por la Escuela de Comercio Martín Zapata (UNCuyo) me introdujo al mundo de la web y el desarrollo de aplicaciones, consolidando mi camino en la programación.'
+            },
+            academic: {
+                title: '# FORMACIÓN ACADÉMICA',
+                desc1: 'Actualmente me encuentro cursando la Licenciatura en Análisis y Gestión de Datos en la Universidad Nacional de San Luis.'
+            }
         },
         stack: {
             principal: [
@@ -54,19 +65,19 @@ const TRANSLATIONS = {
         },
         methodology: {
             logical: {
-                title: 'PENSAMIENTO LÓGICO',
+                title: '# PENSAMIENTO LÓGICO',
                 desc: 'Abordo los problemas analizando primero, escribiendo el código después. Una hora de diseño ahorra diez de debugging.'
             },
             practices: {
-                title: 'BUENAS PRÁCTICAS',
+                title: '# BUENAS PRÁCTICAS',
                 desc: 'Código limpio, documentado y testeable. Uso TDD con PHPUnit para asegurar calidad desde el inicio.'
             },
             linux: {
-                title: 'LINUX COMO ENTORNO',
+                title: '# LINUX COMO ENTORNO',
                 desc: 'Uso Linux diariamente. Trabajar cerca del sistema me permite entender mejor la infraestructura que sostiene las aplicaciones.'
             },
             collaboration: {
-                title: 'COLABORACIÓN',
+                title: '# COLABORACIÓN',
                 desc: 'Git para control de versiones. Apuesto a la revisión constructiva del código y la comunicación clara con el equipo.'
             }
         },
@@ -87,7 +98,7 @@ const TRANSLATIONS = {
                 items: [
                     'Diseño y desarrollo de sistema de reservas multipropósito',
                     'Pipeline CI/CD automatizado con Docker + Jenkins',
-                    'Proyectos de web scraping usando Python, Bash, RDB, GCP'
+                    'Proyectos de web scraping usando Python, Bash, RDBMS, GCP'
                 ]
             },
             circlan: {
@@ -173,13 +184,24 @@ const TRANSLATIONS = {
             curiosity: 'Curiosity is my main driver. I don\'t settle for "it works" - I want to understand WHY it works.',
             teamwork: 'I firmly believe that commitment and empathy are the best allies in teamwork. Programming is not just about writing code: it\'s about solving real problems in an elegant and maintainable way.',
             balance: 'In code I find the perfect balance between logic, creativity and utility. Each project is an opportunity to challenge myself and grow professionally.',
-            studies: 'Currently studying Bachelor of Data Analysis and Management at Universidad Nacional de San Luis.',
             locationLabel: 'Location:',
             location: 'Mendoza, Argentina',
             locationFull: 'Mendoza, Argentina',
             languagesLabel: 'Languages:',
             languages: 'Spanish (native) | English (upper-intermediate)',
             languagesFull: 'Spanish (native) | English (upper-intermediate)'
+        },
+        formation: {
+            selfTaught: {
+                title: '# SELF-TAUGHT PATH',
+                desc1: 'Started in 2005, at age 13, with a CD of the old SuSE Linux that arrived home.',
+                desc2: 'Learned by reading manpages with dial-up connection. During adolescence I maintained a Linux blog and participated in forums and exchanged with the Spanish-speaking Linux bloggers community.',
+                desc3: 'My time at Escuela de Comercio Martín Zapata School (UNCuyo) introduced me to the world of web and application development, consolidating my path in programming.'
+            },
+            academic: {
+                title: '# ACADEMIC BACKGROUND',
+                desc1: 'I am currently pursuing the Bachelor\'s degree in Data Analysis and Management at Universidad Nacional de San Luis.'
+            }
         },
         stack: {
             principal: [
@@ -202,19 +224,19 @@ const TRANSLATIONS = {
         },
         methodology: {
             logical: {
-                title: 'LOGICAL THINKING',
+                title: '# LOGICAL THINKING',
                 desc: 'I approach problems by analyzing first, coding later. One hour of design saves ten hours of debugging.'
             },
             practices: {
-                title: 'BEST PRACTICES',
+                title: '# BEST PRACTICES',
                 desc: 'Clean, documented and testable code. I use TDD with PHPUnit to ensure quality from the start.'
             },
             linux: {
-                title: 'LINUX AS ENVIRONMENT',
+                title: '# LINUX AS ENVIRONMENT',
                 desc: 'I use Linux daily. Working close to the system allows me to better understand the infrastructure that supports applications.'
             },
             collaboration: {
-                title: 'COLLABORATION',
+                title: '# COLLABORATION',
                 desc: 'Git for version control. I believe in constructive code review and clear communication with the team.'
             }
         },
@@ -235,7 +257,7 @@ const TRANSLATIONS = {
                 items: [
                     'Design and development of multi-purpose reservation system',
                     'Automated CI/CD pipeline with Docker + Jenkins',
-                    'Web scraping projects using Python, Bash, RDB, GCP'
+                    'Web scraping projects using Python, Bash, RDBMS, GCP'
                 ]
             },
             circlan: {

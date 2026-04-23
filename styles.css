@@ -308,7 +308,25 @@ body {
 
 .methodology-block div {
     color: var(--text-amber);
-    padding-left: 1rem;
+    padding-left: 2ch;
+}
+
+/* ===== Formation Blocks ===== */
+.formation-block {
+    margin-bottom: 1.25rem;
+}
+
+.formation-block h3 {
+    color: var(--text-cyan);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.formation-block div {
+    color: var(--text-amber);
+    padding-left: 2ch;
+    margin-bottom: 0.25rem;
 }
 
 /* ===== Log Entries (Achievements) ===== */
@@ -332,7 +350,7 @@ body {
 
 .log-entry .log-content {
     margin-top: 0.5rem;
-    padding-left: 1rem;
+    padding-left: 2ch;
 }
 
 .log-entry .log-content div {
