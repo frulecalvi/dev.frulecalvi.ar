@@ -3,14 +3,434 @@
  * Franco Rule Calvi
  */
 
+// ===== Translations =====
+const TRANSLATIONS = {
+    es: {
+        boot: {
+            init: 'INICIANDO DEVOS v1.0...',
+            mount: 'MONTANDO SISTEMA DE ARCHIVOS',
+            loading: 'CARGANDO PERFIL',
+            location: 'UBICACIÓN',
+            access: 'ACCESO CONCEDIDO. BIENVENIDO, VISITANTE.',
+            press: 'Presiona [ENTER] para continuar...'
+        },
+        hero: {
+            title: 'Franco Rule Calvi',
+            role: 'Desarrollador Backend especializado en PHP, Laravel y arquitectura de datos.',
+            passion: 'Apasionado por el pensamiento lógico, el orden y las buenas prácticas.',
+            email: 'frulecalvi@gmail.com'
+        },
+        about: {
+            curiosity: 'La curiosidad es mi motor principal. No me conformo con "que funcione" - quiero entender POR QUÉ funciona.',
+            teamwork: 'Soy un firme creyente de que el compromiso y la empatía son los mejores aliados en el trabajo en equipo. Programar no es solo escribir código: es resolver problemas reales de forma elegante y mantenible.',
+            balance: 'En el código encuentro el equilibrio perfecto entre lógica, creatividad y utilidad. Cada proyecto es una oportunidad de desafiarme y crecer profesionalmente.',
+            locationLabel: 'Ubicación:',
+            location: 'Mendoza, Argentina',
+            locationFull: 'Mendoza, Argentina',
+            languagesLabel: 'Idiomas:',
+            languages: 'Español (nativo) | Inglés (intermedio-avanzado)',
+            languagesFull: 'Español (nativo) | Inglés (intermedio-avanzado)'
+        },
+        stack: {
+            principal: [
+                { name: 'php8', level: 'Experiencia sólida' },
+                { name: 'laravel12', level: 'Framework principal' },
+                { name: 'mysql', level: 'Diseño y optimización' },
+                { name: 'linux', level: 'Uso diario' },
+                { name: 'git', level: 'Colaboración' },
+                { name: 'docker', level: 'Contenedores' },
+                { name: 'phpunit', level: 'TDD' }
+            ],
+            secondary: [
+                { name: 'bash', level: 'Automatización' },
+                { name: 'jenkins', level: 'Pipelines CI/CD' },
+                { name: 'gcp', level: 'Google Cloud' },
+                { name: 'python', level: 'BigQuery, scraping y análisis de datos' }
+            ]
+        },
+        methodology: {
+            logical: {
+                title: 'PENSAMIENTO LÓGICO',
+                desc: 'Abordo los problemas analizando primero, codificando después. Una hora de diseño ahorra diez de debugging.'
+            },
+            practices: {
+                title: 'BUENAS PRÁCTICAS',
+                desc: 'Código limpio, documentado y testeable. Uso TDD con PHPUnit para asegurar calidad desde el inicio.'
+            },
+            linux: {
+                title: 'LINUX COMO ENTORNO',
+                desc: 'Uso Linux diariamente. Trabajar cerca del sistema me permite entender mejor la infraestructura que sostiene las aplicaciones.'
+            },
+            collaboration: {
+                title: 'COLABORACIÓN',
+                desc: 'Git para control de versiones. Creo en el código review constructivo y la comunicación clara con el equipo.'
+            }
+        },
+        achievements: {
+            idealsur: {
+                role: 'Desarrollador Backend',
+                location: 'Remoto',
+                period: '2023-Presente',
+                items: [
+                    'Optimización de procesamiento de datos a gran escala usando PHP + Bash + Python + BigQuery',
+                    'Implementación de soluciones Laravel para servicios de atención al cliente',
+                    'Mejoras en CRM corporativo optimizando código server-side'
+                ]
+            },
+            ecosintesis: {
+                location: 'Remoto',
+                period: 'Anterior',
+                items: [
+                    'Diseño y desarrollo de sistema de reservas multipropósito para agencias de viaje',
+                    'Pipeline CI/CD automatizado con Docker + Jenkins',
+                    'Proyectos de web scraping usando Python, Bash, RDB, GCP'
+                ]
+            },
+            circlan: {
+                role: 'Desarrollador Fullstack',
+                period: '2010-2013',
+                items: [
+                    'Desarrollo de sitios para diversos clientes usando WordPress, Joomla, PHP, MySQL, JS, HTML, CSS',
+                    'Soluciones a medida permitiendo autogestión de contenido por parte de clientes'
+                ]
+            }
+        },
+        contact: {
+            email: 'email:',
+            linkedin: 'linkedin:',
+            location: 'ubicación:',
+            available: 'Disponible para:',
+            opportunities: [
+                'Oportunidades backend',
+                'Proyectos de optimización de datos',
+                'Colaboraciones open source'
+            ]
+        },
+        commands: {
+            help: 'Muestra los comandos disponibles',
+            clear: 'Limpia la terminal',
+            neofetch: 'Muestra información del sistema',
+            uptime: 'Muestra el tiempo de actividad',
+            uname: 'Muestra el nombre del sistema',
+            sudo: 'Intenta obtener acceso de superusuario',
+            matrix: 'Activa el modo matrix',
+            restart: 'Reinicia el sistema',
+            whoami: 'Identidad del usuario',
+            ls: 'Lista el directorio',
+            pwd: 'Muestra el directorio actual',
+            date: 'Muestra la fecha'
+        },
+        output: {
+            availableCommands: 'Comandos disponibles:',
+            navigation: 'Navegación:',
+            scrollToView: 'Desplázate hacia abajo para ver las secciones',
+            contentLoads: 'Todo el contenido se carga automáticamente al hacer scroll',
+            terminalCleared: 'Terminal limpiada. Desplázate hacia abajo para recargar el contenido.',
+            rebooting: 'Reiniciando sistema...',
+            commandNotFound: 'Comando no encontrado',
+            typeHelp: "Escribe '<span class=\"cmd-name\">help</span>' para ver los comandos disponibles.",
+            possibleCommands: 'Comandos posibles:',
+            systemUptime: 'Tiempo de actividad:',
+            sudoPassword: '[sudo] contraseña para visitante: ********',
+            sudoError: 'franco no está en el archivo sudoers. Este incidente será reportado.',
+            niceTry: 'Buen intento, hacker 😉',
+            matrixActivated: 'Modo matrix activado por 10 segundos...',
+            visitor: 'visitante (invitado autenticado)',
+            os: 'SO',
+            host: 'Host',
+            location: 'Ubicación',
+            uptime: 'Actividad',
+            shell: 'Shell',
+            terminal: 'Terminal',
+            cpu: 'CPU',
+            memory: 'Memoria'
+        },
+        footer: {
+            version: 'DEVOS v1.0 - Franco Rule Calvi - 2026'
+        }
+    },
+    en: {
+        boot: {
+            init: 'INITIALIZING DEVOS v1.0...',
+            mount: 'MOUNTING FILESYSTEM',
+            loading: 'LOADING PROFILE',
+            location: 'LOCATION',
+            access: 'ACCESS GRANTED. WELCOME, VISITOR.',
+            press: 'Press [ENTER] to continue...'
+        },
+        hero: {
+            title: 'Franco Rule Calvi',
+            role: 'Backend Developer specialized in PHP, Laravel and data architecture.',
+            passion: 'Passionate about logical thinking, order and best practices.',
+            email: 'frulecalvi@gmail.com'
+        },
+        about: {
+            curiosity: 'Curiosity is my main driver. I don\'t settle for "it works" - I want to understand WHY it works.',
+            teamwork: 'I firmly believe that commitment and empathy are the best allies in teamwork. Programming is not just about writing code: it\'s about solving real problems in an elegant and maintainable way.',
+            balance: 'In code I find the perfect balance between logic, creativity and utility. Each project is an opportunity to challenge myself and grow professionally.',
+            locationLabel: 'Location:',
+            location: 'Mendoza, Argentina',
+            locationFull: 'Mendoza, Argentina',
+            languagesLabel: 'Languages:',
+            languages: 'Spanish (native) | English (upper-intermediate)',
+            languagesFull: 'Spanish (native) | English (upper-intermediate)'
+        },
+        stack: {
+            principal: [
+                { name: 'php8', level: 'Solid experience' },
+                { name: 'laravel12', level: 'Main framework' },
+                { name: 'mysql', level: 'Design and optimization' },
+                { name: 'linux', level: 'Daily driver' },
+                { name: 'git', level: 'Collaboration' },
+                { name: 'docker', level: 'Containers' },
+                { name: 'phpunit', level: 'TDD' }
+            ],
+            secondary: [
+                { name: 'bash', level: 'Automation' },
+                { name: 'jenkins', level: 'CI/CD pipelines' },
+                { name: 'gcp', level: 'Google Cloud' },
+                { name: 'python', level: 'BigQuery, scraping & data analysis' }
+            ]
+        },
+        methodology: {
+            logical: {
+                title: 'LOGICAL THINKING',
+                desc: 'I approach problems by analyzing first, coding later. One hour of design saves ten hours of debugging.'
+            },
+            practices: {
+                title: 'BEST PRACTICES',
+                desc: 'Clean, documented and testable code. I use TDD with PHPUnit to ensure quality from the start.'
+            },
+            linux: {
+                title: 'LINUX AS ENVIRONMENT',
+                desc: 'I use Linux daily. Working close to the system allows me to better understand the infrastructure that supports applications.'
+            },
+            collaboration: {
+                title: 'COLLABORATION',
+                desc: 'Git for version control. I believe in constructive code review and clear communication with the team.'
+            }
+        },
+        achievements: {
+            idealsur: {
+                role: 'Backend Developer',
+                location: 'Remote',
+                period: '2023-Present',
+                items: [
+                    'Optimization of large-scale data processing using PHP + Bash + Python + BigQuery',
+                    'Implementation of Laravel solutions for customer service',
+                    'Improvements in corporate CRM optimizing server-side code'
+                ]
+            },
+            ecosintesis: {
+                location: 'Remote',
+                period: 'Previous',
+                items: [
+                    'Design and development of multi-purpose reservation system for travel agencies',
+                    'Automated CI/CD pipeline with Docker + Jenkins',
+                    'Web scraping projects using Python, Bash, RDB, GCP'
+                ]
+            },
+            circlan: {
+                role: 'Fullstack Developer',
+                period: '2010-2013',
+                items: [
+                    'Development of websites for various clients using WordPress, Joomla, PHP, MySQL, JS, HTML, CSS',
+                    'Custom solutions allowing clients to self-manage content'
+                ]
+            }
+        },
+        contact: {
+            email: 'email:',
+            linkedin: 'linkedin:',
+            location: 'location:',
+            available: 'Available for:',
+            opportunities: [
+                'Backend opportunities',
+                'Data optimization projects',
+                'Open source collaborations'
+            ]
+        },
+        commands: {
+            help: 'Show available commands',
+            clear: 'Clear terminal',
+            neofetch: 'Display system information',
+            uptime: 'Show system uptime',
+            uname: 'Show system name',
+            sudo: 'Try to gain superuser access',
+            matrix: 'Activate matrix mode',
+            restart: 'Reboot the system',
+            whoami: 'User identity',
+            ls: 'List directory',
+            pwd: 'Print working directory',
+            date: 'Show date'
+        },
+        output: {
+            availableCommands: 'Available commands:',
+            navigation: 'Navigation:',
+            scrollToView: 'Scroll down to view sections',
+            contentLoads: 'All content loads automatically as you scroll',
+            terminalCleared: 'Terminal cleared. Scroll down to reload content.',
+            rebooting: 'Rebooting system...',
+            commandNotFound: 'Command not found',
+            typeHelp: "Type '<span class=\"cmd-name\">help</span>' to see available commands.",
+            possibleCommands: 'Possible commands:',
+            systemUptime: 'System uptime:',
+            sudoPassword: '[sudo] password for visitor: ********',
+            sudoError: 'franco is not in the sudoers file. This incident will be reported.',
+            niceTry: 'Nice try, hacker 😉',
+            matrixActivated: 'Matrix mode activated for 10 seconds...',
+            visitor: 'visitor (authenticated guest)',
+            os: 'OS',
+            host: 'Host',
+            location: 'Location',
+            uptime: 'Uptime',
+            shell: 'Shell',
+            terminal: 'Terminal',
+            cpu: 'CPU',
+            memory: 'Memory'
+        },
+        footer: {
+            version: 'DEVOS v1.0 - Franco Rule Calvi - 2026'
+        }
+    }
+};
+
 // ===== Configuration =====
 const CONFIG = {
     bootSeenKey: 'devos_boot_seen',
     animationsEnabledKey: 'devos_animations_enabled',
+    languageKey: 'devos_language',
     typingSpeed: 15, // ms per character - optimizado para SEO
     typingSpeedFast: 10,
     scrollThreshold: 0.2
 };
+
+// ===== Current Language =====
+let currentLang = 'es';
+
+function getText(key) {
+    const keys = key.split('.');
+    let value = TRANSLATIONS[currentLang];
+    for (const k of keys) {
+        value = value?.[k];
+    }
+    return value || key;
+}
+
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem(CONFIG.languageKey, lang);
+    updateLanguageUI();
+}
+
+function updateLanguageUI() {
+    // Update boot screen
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const text = getText(key);
+        if (text) {
+            // Preserve any child elements (like span.success)
+            const spanElements = el.querySelectorAll('span');
+            if (spanElements.length > 0 && el.getAttribute('data-i18n').startsWith('boot.')) {
+                // For boot lines with OK spans, rebuild content
+                const parentKey = key.replace('boot.', '');
+                const parentText = getText(`boot.${parentKey}`);
+                if (parentText) {
+                    el.innerHTML = el.innerHTML.replace(/^[^(<]+/, parentText + ' ');
+                }
+            } else {
+                el.textContent = text;
+            }
+        }
+    });
+
+    // Update all elements with data-i18n-key
+    document.querySelectorAll('[data-i18n-key]').forEach(el => {
+        const key = el.getAttribute('data-i18n-key');
+        const text = getText(key);
+        if (text !== undefined) {
+            const prefix = el.getAttribute('data-prefix') || '';
+            const prefixI18nKey = el.getAttribute('data-prefix-i18n');
+            const prefixText = prefixI18nKey ? getText(prefixI18nKey) : '';
+            const fullPrefix = prefixText ? prefixText + ' ' : prefix;
+
+            if (el.classList.contains('typewriter')) {
+                // For typewriters, update data-text and reset animation
+                el.setAttribute('data-text', fullPrefix + text);
+                el.dataset.originalText = fullPrefix + text;
+                // Reset animation state
+                el.textContent = '';
+                el.classList.remove('completed', 'typing', 'animating');
+                el.classList.add('waiting');
+            } else {
+                // For regular elements
+                el.textContent = fullPrefix + text;
+            }
+        }
+    });
+
+    // Restart all visible typewriter animations
+    restartVisibleTypewriters();
+
+    // Update footer
+    const footerVersion = document.querySelector('.footer .dim');
+    if (footerVersion) {
+        footerVersion.textContent = getText('footer.version');
+    }
+
+    // Update lang toggle button
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        const currentSpan = langToggle.querySelector('.lang-current');
+        const optionSpan = langToggle.querySelector('.lang-option');
+        if (currentLang === 'es') {
+            currentSpan.textContent = 'ES';
+            optionSpan.textContent = 'EN';
+        } else {
+            currentSpan.textContent = 'EN';
+            optionSpan.textContent = 'ES';
+        }
+    }
+}
+
+function restartVisibleTypewriters() {
+    // Get all visible sections
+    const sections = document.querySelectorAll('.section.visible');
+
+    sections.forEach(section => {
+        // Reset all typewriters in visible sections
+        const typewriters = section.querySelectorAll('.typewriter');
+        typewriters.forEach((el, index) => {
+            // Reset to waiting state
+            el.classList.remove('completed', 'typing', 'animating');
+            el.classList.add('waiting');
+            el.textContent = '';
+
+            // Restart animation with staggered delay
+            setTimeout(() => {
+                if (el.classList.contains('waiting')) {
+                    el.classList.remove('waiting');
+                    typeElement(el);
+                }
+            }, index * 100);
+        });
+    });
+}
+
+function initLanguage() {
+    const savedLang = localStorage.getItem(CONFIG.languageKey);
+    if (savedLang && (savedLang === 'es' || savedLang === 'en')) {
+        currentLang = savedLang;
+    } else {
+        currentLang = 'es'; // Default to Spanish
+    }
+    updateLanguageUI();
+}
+
+function toggleLanguage() {
+    const newLang = currentLang === 'es' ? 'en' : 'es';
+    setLanguage(newLang);
+}
 
 // ===== DOM Elements =====
 const bootScreen = document.getElementById('boot-screen');
@@ -21,85 +441,91 @@ const commandOutput = document.getElementById('command-output');
 // ===== Easter Egg Commands =====
 const COMMANDS = {
     help: {
-        description: 'Show available commands',
+        description: () => getText('commands.help'),
         execute: () => {
-            return `<strong class="section-title">Available commands:</strong>
-<span class="cmd-name">help</span>       <span class="cmd-desc">Show this help message</span>
-<span class="cmd-name">neofetch</span>   <span class="cmd-desc">Display system information</span>
-<span class="cmd-name">uptime</span>     <span class="cmd-desc">Show system uptime</span>
-<span class="cmd-name">uname</span>      <span class="cmd-desc">Show system name</span>
-<span class="cmd-name">sudo</span>       <span class="cmd-desc">Try to gain superuser access</span>
-<span class="cmd-name">matrix</span>     <span class="cmd-desc">Activate matrix mode</span>
-<span class="cmd-name">restart</span>    <span class="cmd-desc">Reboot the system</span>
+            const labels = currentLang === 'es' ? 
+                { os: 'SO', host: 'Host', location: 'Ubicación', uptime: 'Actividad', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memoria' } :
+                { os: 'OS', host: 'Host', location: 'Location', uptime: 'Uptime', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memory' };
+            
+            return `<strong class="section-title">${getText('output.availableCommands')}</strong>
+<span class="cmd-name">help</span>       <span class="cmd-desc">${getText('commands.help')}</span>
+<span class="cmd-name">neofetch</span>   <span class="cmd-desc">${getText('commands.neofetch')}</span>
+<span class="cmd-name">uptime</span>     <span class="cmd-desc">${getText('commands.uptime')}</span>
+<span class="cmd-name">uname</span>      <span class="cmd-desc">${getText('commands.uname')}</span>
+<span class="cmd-name">sudo</span>       <span class="cmd-desc">${getText('commands.sudo')}</span>
+<span class="cmd-name">matrix</span>     <span class="cmd-desc">${getText('commands.matrix')}</span>
+<span class="cmd-name">restart</span>    <span class="cmd-desc">${getText('commands.restart')}</span>
 
-<strong class="section-title">Navigation:</strong>
-<span class="cmd-desc">Scroll down to view sections</span>
-<span class="cmd-desc">All content loads automatically as you scroll</span>`;
+<strong class="section-title">${getText('output.navigation')}</strong>
+<span class="cmd-desc">${getText('output.scrollToView')}</span>
+<span class="cmd-desc">${getText('output.contentLoads')}</span>`;
         }
     },
     
     clear: {
-        description: 'Clear terminal',
+        description: () => getText('commands.clear'),
         execute: () => {
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            return 'Terminal cleared. Scroll down to reload content.';
+            return getText('output.terminalCleared');
         }
     },
     
     neofetch: {
-        description: 'System info',
+        description: () => getText('commands.neofetch'),
         execute: () => {
+            const labels = currentLang === 'es' ? 
+                { os: 'SO', host: 'Host', location: 'Ubicación', uptime: 'Actividad', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memoria' } :
+                { os: 'OS', host: 'Host', location: 'Location', uptime: 'Uptime', shell: 'Shell', terminal: 'Terminal', cpu: 'CPU', memory: 'Memory' };
+            
             return `<strong>    .---.        franco@dev</strong>
 <strong>   /     \\       -----------</strong>
-   \\     /       <span class="cmd-name">OS:</span>        <span class="cmd-desc">DEVOS v1.0</span>
-    \\   /        <span class="cmd-name">Host:</span>      <span class="cmd-desc">Franco Rule Calvi</span>
-     \\ /         <span class="cmd-name">Location:</span>  <span class="cmd-desc">Mendoza, AR</span>
-      v          <span class="cmd-name">Uptime:</span>    <span class="cmd-desc">${getUptime()}</span>
-                 <span class="cmd-name">Shell:</span>     <span class="cmd-desc">bash 5.1.16</span>
-                 <span class="cmd-name">Terminal:</span>  <span class="cmd-desc">web-terminal</span>
-                 <span class="cmd-name">CPU:</span>       <span class="cmd-desc">PHP Brain 8.2</span>
-                 <span class="cmd-name">Memory:</span>    <span class="cmd-desc">Laravel Powered</span>`;
+   \\     /       <span class="cmd-name">${labels.os}:</span>        <span class="cmd-desc">DEVOS v1.0</span>
+    \\   /        <span class="cmd-name">${labels.host}:</span>      <span class="cmd-desc">Franco Rule Calvi</span>
+     \\ /         <span class="cmd-name">${labels.location}:</span>  <span class="cmd-desc">Mendoza, AR</span>
+       v          <span class="cmd-name">${labels.uptime}:</span>    <span class="cmd-desc">${getUptime()}</span>
+                 <span class="cmd-name">${labels.shell}:</span>     <span class="cmd-desc">bash 5.1.16</span>
+                 <span class="cmd-name">${labels.terminal}:</span>  <span class="cmd-desc">web-terminal</span>
+                 <span class="cmd-name">${labels.cpu}:</span>       <span class="cmd-desc">PHP Brain 8.2</span>
+                 <span class="cmd-name">${labels.memory}:</span>    <span class="cmd-desc">Laravel Powered</span>`;
         }
     },
     
     uptime: {
-        description: 'System uptime',
+        description: () => getText('commands.uptime'),
         execute: () => {
-            return `System uptime: ${getUptime()}`;
+            return `${getText('output.systemUptime')} ${getUptime()}`;
         }
     },
     
     uname: {
-        description: 'System name',
+        description: () => getText('commands.uname'),
         execute: () => {
             return 'DEVOS v1.0 franco-dev generic x86_64 GNU/Linux';
         }
     },
     
     sudo: {
-        description: 'Superuser access',
+        description: () => getText('commands.sudo'),
         execute: () => {
-            return `<span class="cmd-name">[sudo]</span> password for visitor: ********
+            return `<span class="cmd-name">[sudo]</span> ${getText('output.sudoPassword')}
 
-<span class="cmd-desc">franco is not in the sudoers file. This incident will be reported.</span>
+<span class="cmd-desc">${getText('output.sudoError')}</span>
 
-<strong>Nice try, hacker 😉</strong>`;
+<strong>${getText('output.niceTry')}</strong>`;
         }
     },
     
     matrix: {
-        description: 'Matrix mode',
+        description: () => getText('commands.matrix'),
         execute: () => {
             activateMatrixMode();
-            return 'Matrix mode activated for 10 seconds...';
+            return getText('output.matrixActivated');
         }
     },
     
     restart: {
-        description: 'Reboot the system',
+        description: () => getText('commands.restart'),
         execute: () => {
-            // Limpiar localStorage y recargar con param
             localStorage.removeItem(CONFIG.bootSeenKey);
             localStorage.removeItem(CONFIG.animationsEnabledKey);
             
@@ -107,33 +533,33 @@ const COMMANDS = {
                 window.location.href = window.location.pathname + '?reboot=true';
             }, 500);
             
-            return 'Rebooting system...';
+            return getText('output.rebooting');
         }
     },
     
     whoami: {
-        description: 'User identity',
+        description: () => getText('commands.whoami'),
         execute: () => {
-            return 'visitor (authenticated guest)';
+            return getText('output.visitor');
         }
     },
     
     ls: {
-        description: 'List directory',
+        description: () => getText('commands.ls'),
         execute: () => {
             return 'about.txt  achievements.log  contact  methodology.md  stack/';
         }
     },
     
     pwd: {
-        description: 'Print working directory',
+        description: () => getText('commands.pwd'),
         execute: () => {
             return '/home/franco/dev';
         }
     },
     
     date: {
-        description: 'Show date',
+        description: () => getText('commands.date'),
         execute: () => {
             return new Date().toString();
         }
@@ -238,11 +664,28 @@ function completeBoot() {
 function initTypewriter() {
     const typewriters = document.querySelectorAll('.typewriter');
     const animationsEnabled = localStorage.getItem(CONFIG.animationsEnabledKey) === 'true';
-    
+
     typewriters.forEach(el => {
-        const text = el.getAttribute('data-text');
+        // Check if this typewriter has an i18n key
+        const i18nKey = el.getAttribute('data-i18n-key');
+        let text = el.getAttribute('data-text') || '';
+
+        if (i18nKey) {
+            // Get translated text
+            const translatedText = getText(i18nKey);
+            if (translatedText) {
+                const prefix = el.getAttribute('data-prefix') || '';
+                const prefixI18nKey = el.getAttribute('data-prefix-i18n');
+                const prefixText = prefixI18nKey ? getText(prefixI18nKey) : '';
+                const fullPrefix = prefixText ? prefixText + ' ' : prefix;
+                text = fullPrefix + translatedText;
+                // Update data-text attribute for future reference
+                el.setAttribute('data-text', text);
+            }
+        }
+
         if (!text) return;
-        
+
         if (animationsEnabled) {
             // MODO ANIMADO: como está ahora
             el.textContent = '';
@@ -254,7 +697,7 @@ function initTypewriter() {
             el.classList.add('completed');
         }
     });
-    
+
     // Las animaciones son manejadas por IntersectionObserver cuando cada sección entra en viewport
 }
 
@@ -411,18 +854,22 @@ function handleCommandInput(e) {
 
 function executeCommand(command) {
     if (!command) return;
-    
+
     commandOutput.classList.remove('hidden', 'error');
-    
+
     if (COMMANDS[command]) {
         commandOutput.innerHTML = COMMANDS[command].execute();
     } else {
         commandOutput.classList.add('error');
-        commandOutput.innerHTML = `<strong>Command not found:</strong> <span class="cmd-name">${command}</span>
+        const notFound = currentLang === 'es' ? 'Comando no encontrado' : 'Command not found';
+        const typeHelp = currentLang === 'es' ?
+            `Escribe '<span class="cmd-name">help</span>' para ver los comandos disponibles.` :
+            `Type '<span class="cmd-name">help</span>' to see available commands.`;
+        commandOutput.innerHTML = `<strong>${notFound}:</strong> <span class="cmd-name">${command}</span>
 
-<span class="cmd-desc">Type '<span class="cmd-name">help</span>' to see available commands.</span>`;
+<span class="cmd-desc">${typeHelp}</span>`;
     }
-    
+
     // Scroll to show output
     setTimeout(() => {
         commandOutput.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -432,7 +879,7 @@ function executeCommand(command) {
 function autocompleteCommand() {
     const partial = inputCursor.textContent.trim().toLowerCase();
     if (!partial) return;
-    
+
     const matches = Object.keys(COMMANDS).filter(cmd => cmd.startsWith(partial));
     if (matches.length === 1) {
         inputCursor.textContent = matches[0];
@@ -440,7 +887,16 @@ function autocompleteCommand() {
     } else if (matches.length > 1) {
         commandOutput.classList.remove('hidden', 'error');
         const matchList = matches.map(cmd => `<span class="cmd-name">${cmd}</span>`).join(', ');
-        commandOutput.innerHTML = `<strong>Possible commands:</strong> ${matchList}`;
+        const possibleCommands = currentLang === 'es' ? 'Comandos posibles' : 'Possible commands';
+        commandOutput.innerHTML = `<strong>${possibleCommands}:</strong> ${matchList}`;
+    }
+}
+
+// ===== Language Toggle =====
+function initLanguageToggle() {
+    const langToggle = document.getElementById('lang-toggle');
+    if (langToggle) {
+        langToggle.addEventListener('click', toggleLanguage);
     }
 }
 
@@ -529,10 +985,12 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     // Marcar que JS está habilitado (oculta contenido <noscript>)
     document.body.classList.add('js-enabled');
-    
+
+    initLanguage();
+    initLanguageToggle();
     initBootSequence();
     initInteractiveCommands();
-    
+
     // Animations are now handled only by IntersectionObserver - no need for visibility check
 });
 

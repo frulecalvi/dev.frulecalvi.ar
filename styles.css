@@ -12,9 +12,52 @@
     --text-white: #eeeeee;
     --error: #ff3333;
     --success: #33ff00;
-    
+
     --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
     --cursor-blink: blink 1s step-end infinite;
+}
+
+/* ===== Language Toggle ===== */
+.lang-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--text-amber-dim);
+    color: var(--text-amber);
+    padding: 0.5rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lang-toggle:hover {
+    background-color: var(--bg-tertiary);
+    border-color: var(--text-amber);
+    color: var(--text-amber-bright);
+}
+
+.lang-current {
+    font-weight: 700;
+    color: var(--text-amber-bright);
+}
+
+.lang-separator {
+    color: var(--text-dim);
+}
+
+.lang-option {
+    color: var(--text-dim);
+    transition: color 0.2s ease;
+}
+
+.lang-toggle:hover .lang-option {
+    color: var(--text-amber);
 }
 
 /* ===== Reset & Base ===== */
@@ -456,9 +499,16 @@ body {
     html {
         font-size: 14px;
     }
-    
+
     .terminal {
         padding: 1rem;
+    }
+
+    .lang-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
     
     .file-entry {

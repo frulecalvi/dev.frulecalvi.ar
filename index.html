@@ -10,16 +10,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Language Toggle -->
+    <button id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma">
+        <span class="lang-current">ES</span>
+        <span class="lang-separator">|</span>
+        <span class="lang-option">EN</span>
+    </button>
+
     <!-- Boot Screen -->
     <div id="boot-screen" class="boot-screen">
         <div class="boot-content">
-            <div class="boot-line">INITIALIZING DEVOS v1.0...</div>
-            <div class="boot-line">MOUNTING FILESYSTEM... <span class="success">[OK]</span></div>
-            <div class="boot-line">LOADING PROFILE: franco_rule_calvi... <span class="success">[OK]</span></div>
-            <div class="boot-line">LOCATION: Mendoza, AR... <span class="success">[OK]</span></div>
-            <div class="boot-line">ACCESS GRANTED. WELCOME, VISITOR.</div>
+            <div class="boot-line" data-i18n="boot.init">INICIANDO DEVOS v1.0...</div>
+            <div class="boot-line"><span data-i18n="boot.mount">MONTANDO SISTEMA DE ARCHIVOS</span>... <span class="success">[OK]</span></div>
+            <div class="boot-line"><span data-i18n="boot.loading">CARGANDO PERFIL</span>: franco_rule_calvi... <span class="success">[OK]</span></div>
+            <div class="boot-line"><span data-i18n="boot.location">UBICACIÓN</span>: Mendoza, AR... <span class="success">[OK]</span></div>
+            <div class="boot-line" data-i18n="boot.access">ACCESO CONCEDIDO. BIENVENIDO, VISITANTE.</div>
             <div class="boot-line">&nbsp;</div>
-            <div class="boot-line blink">Press [ENTER] to continue...</div>
+            <div class="boot-line blink" data-i18n="boot.press">Presiona [ENTER] para continuar...</div>
         </div>
     </div>
 
@@ -40,9 +47,9 @@
                     <span>> frulecalvi@gmail.com</span>
                 </noscript>
                 <span><strong>> Franco Rule Calvi</strong></span>
-                <div class="typewriter delay-1" data-text="> Backend Developer especializado en PHP, Laravel y arquitectura de datos."></div>
-                <div class="typewriter delay-2" data-text="> Apasionado por el pensamiento lógico, el orden y las buenas prácticas."></div>
-                <div class="typewriter delay-3" data-text="> frulecalvi@gmail.com"></div>
+                <div class="typewriter delay-1" data-text="> Backend Developer especializado en PHP, Laravel y arquitectura de datos." data-i18n-key="hero.role" data-prefix="> "></div>
+                <div class="typewriter delay-2" data-text="> Apasionado por el pensamiento lógico, el orden y las buenas prácticas." data-i18n-key="hero.passion" data-prefix="> "></div>
+                <div class="typewriter delay-3" data-text="> frulecalvi@gmail.com" data-i18n-key="hero.email" data-prefix="> "></div>
             </div>
         </section>
 
@@ -60,14 +67,14 @@
                     <span>En el código encuentro el equilibrio perfecto entre lógica, creatividad y utilidad.</span>
                     <span>Ubicación: Mendoza, Argentina | Idiomas: Español (nativo) | English (upper-intermediate)</span>
                 </noscript>
-                <div class="typewriter" data-text="La curiosidad es mi motor principal. No me conformo con 'que funcione' - quiero entender POR QUÉ funciona."></div>
+                <div class="typewriter" data-i18n-key="about.curiosity"></div>
                 <div class="typewriter delay-1" data-text=" "></div>
-                <div class="typewriter delay-1" data-text="Soy un firme creyente de que el compromiso y la empatía son los mejores aliados en el trabajo en equipo. Programar no es solo escribir código: es resolver problemas reales de forma elegante y mantenible."></div>
+                <div class="typewriter delay-1" data-i18n-key="about.teamwork"></div>
                 <div class="typewriter delay-2" data-text=" "></div>
-                <div class="typewriter delay-2" data-text="En el código encuentro el equilibrio perfecto entre lógica, creatividad y utilidad. Cada proyecto es una oportunidad de desafiarme y crecer profesionalmente."></div>
+                <div class="typewriter delay-2" data-i18n-key="about.balance"></div>
                 <div class="typewriter delay-3" data-text=" "></div>
-                <div class="typewriter delay-3" data-text="Ubicación: Mendoza, Argentina"></div>
-                <div class="typewriter delay-3" data-text="Idiomas: Español (nativo) | English (upper-intermediate)"></div>
+                <div class="typewriter delay-3" data-i18n-key="about.locationFull" data-prefix-i18n="about.locationLabel"></div>
+                <div class="typewriter delay-3" data-i18n-key="about.languagesFull" data-prefix-i18n="about.languagesLabel"></div>
             </div>
         </section>
 
@@ -83,43 +90,43 @@
                     <span class="permissions">-rwxr-xr-x</span>
                     <span class="filename">php8</span>
                     <span class="progress-bar"><span class="fill" style="width: 100%"></span></span>
-                    <span class="level">Experiencia sólida</span>
+                    <span class="level" data-i18n-key="stack.principal.0.level">Experiencia sólida</span>
                 </div>
                 <div class="file-entry principal">
                     <span class="permissions">-rwxr-xr-x</span>
                     <span class="filename">laravel12</span>
                     <span class="progress-bar"><span class="fill" style="width: 100%"></span></span>
-                    <span class="level">Framework principal</span>
+                    <span class="level" data-i18n-key="stack.principal.1.level">Framework principal</span>
                 </div>
                 <div class="file-entry principal">
                     <span class="permissions">-rwxr-xr-x</span>
                     <span class="filename">mysql</span>
                     <span class="progress-bar"><span class="fill" style="width: 90%"></span></span>
-                    <span class="level">Diseño y optimización</span>
+                    <span class="level" data-i18n-key="stack.principal.2.level">Diseño y optimización</span>
                 </div>
                 <div class="file-entry principal">
                     <span class="permissions">-rwxr-xr-x</span>
                     <span class="filename">linux</span>
                     <span class="progress-bar"><span class="fill" style="width: 80%"></span></span>
-                    <span class="level">Daily driver</span>
+                    <span class="level" data-i18n-key="stack.principal.3.level">Daily driver</span>
                 </div>
                 <div class="file-entry principal">
                     <span class="permissions">-rwxr-xr-x</span>
                     <span class="filename">git</span>
                     <span class="progress-bar"><span class="fill" style="width: 85%"></span></span>
-                    <span class="level">Colaboración</span>
+                    <span class="level" data-i18n-key="stack.principal.4.level">Colaboración</span>
                 </div>
                 <div class="file-entry principal">
                     <span class="permissions">-rwxr-xr-x</span>
                     <span class="filename">docker</span>
                     <span class="progress-bar"><span class="fill" style="width: 65%"></span></span>
-                    <span class="level">Contenedores</span>
+                    <span class="level" data-i18n-key="stack.principal.5.level">Contenedores</span>
                 </div>
                 <div class="file-entry principal">
                     <span class="permissions">-rwxr-xr-x</span>
                     <span class="filename">phpunit</span>
                     <span class="progress-bar"><span class="fill" style="width: 60%"></span></span>
-                    <span class="level">TDD</span>
+                    <span class="level" data-i18n-key="stack.principal.6.level">TDD</span>
                 </div>
             </div>
 
@@ -133,25 +140,25 @@
                     <span class="permissions">-rw-r--r--</span>
                     <span class="filename">bash</span>
                     <span class="progress-bar"><span class="fill" style="width: 55%"></span></span>
-                    <span class="level">Automatización</span>
+                    <span class="level" data-i18n-key="stack.secondary.0.level">Automatización</span>
                 </div>
                 <div class="file-entry secondary">
                     <span class="permissions">-rw-r--r--</span>
                     <span class="filename">jenkins</span>
                     <span class="progress-bar"><span class="fill" style="width: 50%"></span></span>
-                    <span class="level">CI/CD pipelines</span>
+                    <span class="level" data-i18n-key="stack.secondary.1.level">CI/CD pipelines</span>
                 </div>
                 <div class="file-entry secondary">
                     <span class="permissions">-rw-r--r--</span>
                     <span class="filename">gcp</span>
                     <span class="progress-bar"><span class="fill" style="width: 35%"></span></span>
-                    <span class="level">Google Cloud</span>
+                    <span class="level" data-i18n-key="stack.secondary.2.level">Google Cloud</span>
                 </div>
                 <div class="file-entry secondary">
                     <span class="permissions">-rw-r--r--</span>
                     <span class="filename">python</span>
                     <span class="progress-bar"><span class="fill" style="width: 35%"></span></span>
-                    <span class="level">BigQuery, scraping & data analysis</span>
+                    <span class="level" data-i18n-key="stack.secondary.3.level">BigQuery, scraping & data analysis</span>
                 </div>
             </div>
         </section>
@@ -183,20 +190,20 @@
                     </div>
                 </noscript>
                 <div class="methodology-block">
-                    <h3 class="typewriter" data-text="PENSAMIENTO LÓGICO"></h3>
-                    <div class="typewriter delay-1" data-text="Abordo los problemas analizando primero, codificando después. Una hora de diseño ahorra diez de debugging."></div>
+                    <h3 class="typewriter" data-i18n-key="methodology.logical.title"></h3>
+                    <div class="typewriter delay-1" data-i18n-key="methodology.logical.desc"></div>
                 </div>
                 <div class="methodology-block">
-                    <h3 class="typewriter delay-1" data-text="BUENAS PRÁCTICAS"></h3>
-                    <div class="typewriter delay-2" data-text="Código limpio, documentado y testeable. Uso TDD con PHPUnit para asegurar calidad desde el inicio."></div>
+                    <h3 class="typewriter delay-1" data-i18n-key="methodology.practices.title"></h3>
+                    <div class="typewriter delay-2" data-i18n-key="methodology.practices.desc"></div>
                 </div>
                 <div class="methodology-block">
-                    <h3 class="typewriter delay-2" data-text="LINUX COMO ENTORNO"></h3>
-                    <div class="typewriter delay-3" data-text="Uso Linux diariamente. Trabajar cerca del sistema me permite entender mejor la infraestructura que sostiene las aplicaciones."></div>
+                    <h3 class="typewriter delay-2" data-i18n-key="methodology.linux.title"></h3>
+                    <div class="typewriter delay-3" data-i18n-key="methodology.linux.desc"></div>
                 </div>
                 <div class="methodology-block">
-                    <h3 class="typewriter delay-3" data-text="COLABORACIÓN"></h3>
-                    <div class="typewriter delay-3" data-text="Git para control de versiones. Creo en el código review constructivo y la comunicación clara con el equipo."></div>
+                    <h3 class="typewriter delay-3" data-i18n-key="methodology.collaboration.title"></h3>
+                    <div class="typewriter delay-3" data-i18n-key="methodology.collaboration.desc"></div>
                 </div>
             </div>
         </section>
@@ -210,29 +217,29 @@
             </div>
             <div class="output">
                 <div class="log-entry">
-                    <span class="log-title">IDEALSUR - Backend Developer (Remoto)</span>
-                    <span class="timestamp">[2023-Present]</span>
+                    <span class="log-title">IDEALSUR - <span data-i18n-key="achievements.idealsur.role">Desarrollador Backend</span> (<span data-i18n-key="achievements.idealsur.location">Remoto</span>)</span>
+                    <span class="timestamp">[<span data-i18n-key="achievements.idealsur.period">2023-Presente</span>]</span>
                     <div class="log-content">
-                        <div class="typewriter" data-text="> Optimización de procesamiento de datos a gran escala usando PHP + Bash + Python + BigQuery"></div>
-                        <div class="typewriter delay-1" data-text="> Implementación de soluciones Laravel para servicios de atención al cliente"></div>
-                        <div class="typewriter delay-1" data-text="> Mejoras en CRM corporativo optimizando código server-side"></div>
+                        <div class="typewriter" data-i18n-key="achievements.idealsur.items.0" data-prefix="> "></div>
+                        <div class="typewriter delay-1" data-i18n-key="achievements.idealsur.items.1" data-prefix="> "></div>
+                        <div class="typewriter delay-1" data-i18n-key="achievements.idealsur.items.2" data-prefix="> "></div>
                     </div>
                 </div>
                 <div class="log-entry">
-                    <span class="log-title">ECOSÍNTESIS - Mendoza (Remoto)</span>
-                    <span class="timestamp">[Previo]</span>
+                    <span class="log-title">ECOSÍNTESIS - Mendoza (<span data-i18n-key="achievements.ecosintesis.location">Remoto</span>)</span>
+                    <span class="timestamp">[<span data-i18n-key="achievements.ecosintesis.period">Anterior</span>]</span>
                     <div class="log-content">
-                        <div class="typewriter delay-1" data-text="> Diseño y desarrollo de sistema de reservas multipropósito para agencias de viaje"></div>
-                        <div class="typewriter delay-2" data-text="> Pipeline CI/CD automatizado con Docker + Jenkins"></div>
-                        <div class="typewriter delay-2" data-text="> Proyectos de web scraping usando Python, Bash, RDB, GCP"></div>
+                        <div class="typewriter delay-1" data-i18n-key="achievements.ecosintesis.items.0" data-prefix="> "></div>
+                        <div class="typewriter delay-2" data-i18n-key="achievements.ecosintesis.items.1" data-prefix="> "></div>
+                        <div class="typewriter delay-2" data-i18n-key="achievements.ecosintesis.items.2" data-prefix="> "></div>
                     </div>
                 </div>
                 <div class="log-entry">
-                    <span class="log-title">CIRCLAN - Fullstack Developer</span>
+                    <span class="log-title">CIRCLAN - <span data-i18n-key="achievements.circlan.role">Desarrollador Fullstack</span></span>
                     <span class="timestamp">[2010-2013]</span>
                     <div class="log-content">
-                        <div class="typewriter delay-2" data-text="> Desarrollo de sitios para diversos clientes usando WordPress, Joomla, PHP, MySQL, JS, HTML, CSS"></div>
-                        <div class="typewriter delay-3" data-text="> Soluciones a medida permitiendo autogestión de contenido por parte de clientes"></div>
+                        <div class="typewriter delay-2" data-i18n-key="achievements.circlan.items.0" data-prefix="> "></div>
+                        <div class="typewriter delay-3" data-i18n-key="achievements.circlan.items.1" data-prefix="> "></div>
                     </div>
                 </div>
             </div>
@@ -247,19 +254,19 @@
             </div>
             <div class="output">
                 <div class="contact-line">
-                    <span class="contact-label">email:</span><a href="mailto:frulecalvi@gmail.com" class="contact-link">frulecalvi@gmail.com</a>
+                    <span class="contact-label" data-i18n-key="contact.email">email:</span><a href="mailto:frulecalvi@gmail.com" class="contact-link">frulecalvi@gmail.com</a>
                 </div>
                 <div class="contact-line">
-                    <span class="contact-label">linkedin:</span><a href="https://linkedin.com/in/frulecalvi" target="_blank" class="contact-link">linkedin.com/in/frulecalvi</a>
+                    <span class="contact-label" data-i18n-key="contact.linkedin">linkedin:</span><a href="https://linkedin.com/in/frulecalvi" target="_blank" class="contact-link">linkedin.com/in/frulecalvi</a>
                 </div>
                 <div class="contact-line">
-                    <span class="contact-label">location:</span><span class="contact-value">Mendoza, Argentina</span>
+                    <span class="contact-label" data-i18n-key="contact.location">ubicación:</span><span class="contact-value">Mendoza, Argentina</span>
                 </div>
                 <div class="typewriter spacer-text" data-text=" "></div>
-                <span><strong>Disponible para:</strong></span>
-                <div class="typewriter delay-1" data-text="- Oportunidades backend"></div>
-                <div class="typewriter delay-1" data-text="- Proyectos de optimización de datos"></div>
-                <div class="typewriter delay-1" data-text="- Colaboraciones open source"></div>
+                <span><strong data-i18n-key="contact.available">Disponible para:</strong></span>
+                <div class="typewriter delay-1" data-i18n-key="contact.opportunities.0" data-prefix="- "></div>
+                <div class="typewriter delay-1" data-i18n-key="contact.opportunities.1" data-prefix="- "></div>
+                <div class="typewriter delay-1" data-i18n-key="contact.opportunities.2" data-prefix="- "></div>
                 <div class="typewriter spacer-text" data-text=" "></div>
             </div>
         </section>
