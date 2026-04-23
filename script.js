@@ -14,9 +14,10 @@ const TRANSLATIONS = {
             access: 'ACCESO CONCEDIDO. BIENVENIDO, VISITANTE.',
             press: 'Presiona [ENTER] para continuar...'
         },
+        tagline: 'Desarrollador Backend | Laravel - PHP - RDB | Procesamiento de datos',
         hero: {
             title: 'Franco Rule Calvi',
-            role: 'Desarrollador Backend especializado en PHP, Laravel y arquitectura de datos.',
+            role: 'Desarrollador Backend especializado en PHP, Laravel y procesamiento de datos.',
             passion: 'Apasionado por el pensamiento lógico, el orden y las buenas prácticas.',
             email: 'hola@frulecalvi.ar'
         },
@@ -158,9 +159,10 @@ const TRANSLATIONS = {
             access: 'ACCESS GRANTED. WELCOME, VISITOR.',
             press: 'Press [ENTER] to continue...'
         },
+        tagline: 'Backend Developer | Laravel - PHP - RDB | Data Processing',
         hero: {
             title: 'Franco Rule Calvi',
-            role: 'Backend Developer specialized in PHP, Laravel and data architecture.',
+            role: 'Backend Developer specialized in PHP, Laravel and data processing.',
             passion: 'Passionate about logical thinking, order and best practices.',
             email: 'hola@frulecalvi.ar'
         },
@@ -371,6 +373,12 @@ function updateLanguageUI() {
 
     // Restart all visible typewriter animations
     restartVisibleTypewriters();
+
+    // Update tagline
+    const tagline = document.querySelector('.tagline');
+    if (tagline) {
+        tagline.textContent = getText('tagline');
+    }
 
     // Update footer
     const footerVersion = document.querySelector('.footer .dim');

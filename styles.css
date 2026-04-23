@@ -137,6 +137,26 @@ body {
     display: none;
 }
 
+/* ===== Tagline ===== */
+.tagline {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-amber-bright);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--bg-tertiary);
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .tagline {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        padding: 0.75rem 0;
+    }
+}
+
 /* ===== Sections ===== */
 .section {
     margin-bottom: 2.5rem;
