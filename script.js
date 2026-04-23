@@ -391,14 +391,18 @@ function updateLanguageUI() {
     // Update lang toggle button
     const langToggle = document.getElementById('lang-toggle');
     if (langToggle) {
-        const currentSpan = langToggle.querySelector('.lang-current');
-        const optionSpan = langToggle.querySelector('.lang-option');
-        if (currentLang === 'es') {
-            currentSpan.textContent = 'ES';
-            optionSpan.textContent = 'EN';
-        } else {
-            currentSpan.textContent = 'EN';
-            optionSpan.textContent = 'ES';
+        // Los spans están siempre en las mismas posiciones
+        const esSpan = langToggle.querySelector('span[data-lang="es"]');
+        const enSpan = langToggle.querySelector('span[data-lang="en"]');
+        
+        if (esSpan && enSpan) {
+            if (currentLang === 'es') {
+                esSpan.className = 'lang-current';
+                enSpan.className = 'lang-option';
+            } else {
+                esSpan.className = 'lang-option';
+                enSpan.className = 'lang-current';
+            }
         }
     }
 }
