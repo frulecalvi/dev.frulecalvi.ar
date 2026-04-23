@@ -212,10 +212,10 @@ body {
 }
 
 .frc-ascii {
-    font-size: 0.65rem;
+    font-size: 0.60rem;
     line-height: 1;
     color: var(--text-cyan);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     white-space: pre;
     overflow: hidden;
     opacity: 0;
@@ -931,7 +931,7 @@ body {
 }
 
 .neofetch-info {
-    line-height: 1.2;
+    line-height: 1;
     flex: 1;
 }
 
@@ -1069,7 +1069,7 @@ body {
     }
     
     .frc-ascii {
-        font-size: 0.65rem;
+        font-size: 0.60rem;
         line-height: 1;
     }
     
@@ -1146,7 +1146,7 @@ body {
     }
     
     .frc-ascii {
-        font-size: 0.4rem;
+        font-size: 0.60rem;
     }
     
     .file-entry {
