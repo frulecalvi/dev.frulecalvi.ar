@@ -56,14 +56,8 @@
     transition: color 0.2s ease;
 }
 
-.lang-toggle:hover .lang-option {
-    color: var(--text-amber);
-}
-
-@media (hover: none) {
-    .lang-toggle:hover .lang-option {
-        color: inherit;
-    }
+.lang-option {
+    color: var(--text-dim) !important;
 }
 
 /* ===== Reset & Base ===== */
