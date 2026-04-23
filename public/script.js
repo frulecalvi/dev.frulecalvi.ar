@@ -534,9 +534,7 @@ const COMMANDS = {
     sudo: {
         description: () => getText('commands.sudo'),
         execute: () => {
-            return `<span class="cmd-name">[sudo]</span> ${getText('output.sudoPassword')}
-
-<span class="cmd-desc">${getText('output.sudoError')}</span>
+            return `<span class="cmd-desc">${getText('output.sudoError')}</span>
 
 <strong>${getText('output.niceTry')}</strong>`;
         }
