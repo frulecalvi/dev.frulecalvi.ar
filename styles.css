@@ -20,7 +20,7 @@
 /* ===== Language Toggle ===== */
 .lang-toggle {
     position: fixed;
-    top: 1rem;
+    bottom: 1rem;
     right: 1rem;
     z-index: 1001;
     background-color: var(--bg-secondary);
@@ -149,19 +149,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-@media (max-width: 768px) {
-    .lang-toggle {
-        position: fixed;
-        top: initial;
-        bottom: 1rem;
-        right: 1rem;
-        left: initial;
-        display: inline-flex;
-        height: 36px;
-        min-height: 36px;
-        max-height: 36px;
-    }
-}
+
 
 /* ===== Sections ===== */
 .section {
