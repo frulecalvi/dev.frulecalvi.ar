@@ -299,6 +299,12 @@ body {
     border-top: 1px solid var(--bg-tertiary);
 }
 
+.input-wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.5rem;
+}
+
 .input-cursor {
     outline: none;
     color: var(--text-white);
@@ -309,13 +315,11 @@ body {
 }
 
 .cursor {
-    display: inline-block;
+    display: inline;
     color: var(--text-amber);
     animation: blink 1s step-end infinite;
-    margin-left: 2px;
+    margin-left: 0;
     font-weight: 700;
-    min-width: 12px;
-    text-align: center;
 }
 
 #command-output {
