@@ -13,10 +13,11 @@
 ## 2. Arquitectura y Estructura de Archivos
 
 ```
-├── index.html          # Estructura semántica de todas las secciones
-├── script.js           # Lógica: traducciones, animaciones, comandos
-├── styles.css          # Estilos: variables CSS, componentes, responsive
-└── AGENTS.md          # Esta documentación
+├── public/
+│   ├── index.html          # Estructura semántica de todas las secciones
+│   ├── script.js           # Lógica: traducciones, animaciones, comandos
+│   └── styles.css          # Estilos: variables CSS, componentes, responsive
+└── AGENTS.md              # Esta documentación
 ```
 
 **Flujo de carga:**
@@ -59,7 +60,7 @@
 
 ## 4. Sistema de Traducciones (i18n)
 
-### Estructura en `script.js`:
+### Estructura en `public/script.js`:
 ```javascript
 const TRANSLATIONS = {
     es: { /* contenido en español */ },
@@ -163,7 +164,7 @@ Todo el contenido está duplicado:
 
 ## 7. Comandos Interactivos (Easter Eggs)
 
-### Lista de comandos (`COMMANDS` en script.js):
+### Lista de comandos (`COMMANDS` en `public/script.js`):
 
 | Comando | Descripción | Respuesta |
 |---------|-------------|-----------|
