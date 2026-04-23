@@ -51,7 +51,7 @@ const TRANSLATIONS = {
         methodology: {
             logical: {
                 title: 'PENSAMIENTO LÓGICO',
-                desc: 'Abordo los problemas analizando primero, codificando después. Una hora de diseño ahorra diez de debugging.'
+                desc: 'Abordo los problemas analizando primero, escribiendo el código después. Una hora de diseño ahorra diez de debugging.'
             },
             practices: {
                 title: 'BUENAS PRÁCTICAS',
@@ -63,7 +63,7 @@ const TRANSLATIONS = {
             },
             collaboration: {
                 title: 'COLABORACIÓN',
-                desc: 'Git para control de versiones. Creo en el código review constructivo y la comunicación clara con el equipo.'
+                desc: 'Git para control de versiones. Apuesto a la revisión constructiva del código y la comunicación clara con el equipo.'
             }
         },
         achievements: {
@@ -72,13 +72,13 @@ const TRANSLATIONS = {
                 location: 'Remoto',
                 period: '2023-2026',
                 items: [
-                    'Optimización de procesamiento de datos a gran escala usando PHP + Bash + Python + BigQuery',
+                    'Optimización de procesamiento de datos a gran escala con PHP + Bash + BigQuery',
                     'Implementación de soluciones Laravel para servicios de atención al cliente',
                     'Mejoras en CRM corporativo optimizando código server-side'
                 ]
             },
             ecosintesis: {
-                location: 'Remoto',
+                location: 'Híbrido',
                 period: '2023-Presente',
                 items: [
                     'Diseño y desarrollo de sistema de reservas multipropósito',
@@ -216,13 +216,13 @@ const TRANSLATIONS = {
                 location: 'Remote',
                 period: '2023-2026',
                 items: [
-                    'Optimization of large-scale data processing using PHP + Bash + Python + BigQuery',
+                    'Optimization of large-scale data processing using PHP + Bash + BigQuery',
                     'Implementation of Laravel solutions for customer service',
                     'Improvements in corporate CRM optimizing server-side code'
                 ]
             },
             ecosintesis: {
-                location: 'Remote',
+                location: 'Hybrid',
                 period: '2023-Present',
                 items: [
                     'Design and development of multi-purpose reservation system',
