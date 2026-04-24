@@ -17,20 +17,17 @@ const TRANSLATIONS = {
             email: 'hola@frulecalvi.ar'
         },
         about: {
-            curiosity: 'La curiosidad es mi motor principal. No me conformo con "que funcione" - quiero entender POR QUÉ funciona.',
-            teamwork: 'Soy un firme creyente de que el compromiso y la empatía son los mejores aliados en el trabajo en equipo. Programar no es solo escribir código: es resolver problemas reales de forma elegante y mantenible.',
-            balance: 'En el código encuentro el equilibrio perfecto entre lógica, creatividad y utilidad. Cada proyecto es una oportunidad de desafiarme y crecer profesionalmente.',
-            locationLabel: 'Ubicación:',
-            location: 'Mendoza, Argentina',
-            locationFull: 'Mendoza, Argentina',
-            languagesLabel: 'Idiomas:',
-            languages: 'Español (nativo) | Inglés (intermedio-avanzado)',
-            languagesFull: 'Español (nativo) | Inglés (intermedio-avanzado)'
+            intro: '¡Hola! Soy desarrollador backend especializado en web, aunque últimamente he estado adentrándome también en el mundo de los datos.',
+            curiosity: 'Me gusta mucho comprender lo que hago. No me conformo con "que funcione": quiero entender POR QUÉ funciona.',
+            teamwork: 'Soy un convencido de que el compromiso y la empatía son los mejores aliados en el trabajo en equipo. Pienso que programar no es sólo escribir código, sino que más bien se trata de resolver problemas reales de forma elegante y mantenible.',
+            balance: 'En el código encuentro el equilibrio perfecto entre lógica, creatividad y utilidad. Cada proyecto es una oportunidad de desafiarme y crecer en cada uno de esos aspectos.',
+            interests: 'Además de programar, dedico parte de mi vida a la música y me genera mucho interés la ciencia en general y la astronomía en particular.',
+            languagesSimple: 'Soy hablante nativo de español y tengo buena comprensión del inglés.'
         },
         formation: {
             selfTaught: {
                 title: 'CAMINO AUTODIDACTA',
-                desc1: 'Inicié en 2005, a los 13 años, con un CD del viejo SuSE Linux que llegó a casa.',
+                desc1: 'Inicié en 2005, a los 13 años, con un CD del viejo SuSE Linux que llegó a mi casa a través de mi padre.',
                 desc2: 'Aprendí leyendo manpages con conexión dial-up. Durante mi adolescencia mantuve un blog sobre Linux y participé en foros e intercambios con la comunidad de blogueros de Linux en español.',
                 desc3: 'Mi paso por la Escuela de Comercio Martín Zapata (UNCuyo) me introdujo al mundo de la web y el desarrollo de aplicaciones, consolidando mi camino en la programación.'
             },
@@ -176,20 +173,17 @@ const TRANSLATIONS = {
             email: 'hola@frulecalvi.ar'
         },
         about: {
-            curiosity: 'Curiosity is my main driver. I don\'t settle for "it works" - I want to understand WHY it works.',
-            teamwork: 'I firmly believe that commitment and empathy are the best allies in teamwork. Programming is not just about writing code: it\'s about solving real problems in an elegant and maintainable way.',
-            balance: 'In code I find the perfect balance between logic, creativity and utility. Each project is an opportunity to challenge myself and grow professionally.',
-            locationLabel: 'Location:',
-            location: 'Mendoza, Argentina',
-            locationFull: 'Mendoza, Argentina',
-            languagesLabel: 'Languages:',
-            languages: 'Spanish (native) | English (upper-intermediate)',
-            languagesFull: 'Spanish (native) | English (upper-intermediate)'
+            intro: 'Hi! I am a backend developer specialized in web, although lately I have been venturing into the world of data as well.',
+            curiosity: 'I really like to understand what I do. I don\'t settle for "it works": I want to understand WHY it works.',
+            teamwork: 'I am convinced that commitment and empathy are the best allies in teamwork. I think programming is not just writing code, but rather it is about solving real problems in an elegant and maintainable way.',
+            balance: 'In code I find the perfect balance between logic, creativity and utility. Every project is an opportunity to challenge myself and grow in each of those aspects.',
+            interests: 'Besides programming, I dedicate part of my life to music and I am very interested in science in general and astronomy in particular.',
+            languagesSimple: 'I am a native Spanish speaker and have good comprehension of English.'
         },
         formation: {
             selfTaught: {
                 title: 'SELF-TAUGHT PATH',
-                desc1: 'Started in 2005, at age 13, with a CD of the old SuSE Linux that arrived home.',
+                desc1: 'Started in 2005, at age 13, with a CD of the old SuSE Linux that arrived at my home through my father.',
                 desc2: 'Learned by reading manpages with dial-up connection. During adolescence I maintained a Linux blog and participated in forums and exchanged with the Spanish-speaking Linux bloggers community.',
                 desc3: 'My time at Escuela de Comercio Martín Zapata (UNCuyo) introduced me to the world of web and application development, consolidating my path in programming.'
             },
