@@ -433,7 +433,7 @@ body {
 /* ===== Output ===== */
 .output {
     padding-left: 0;
-    margin-left: 0.5rem;
+    /* margin-left: 0.5rem; */
 }
 
 .js-enabled noscript {
