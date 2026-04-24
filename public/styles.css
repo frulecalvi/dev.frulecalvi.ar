@@ -5,7 +5,7 @@
     --bg-tertiary: #1a1a1a;
     --bg-quaternary: #252525;
     
-    --text-amber: #ffb000;
+    --text-amber: #ffc64d;
     --text-amber-dim: #cc8800;
     --text-amber-bright: #ffcc33;
     --text-amber-glow: rgba(255, 176, 0, 0.4);
@@ -195,7 +195,7 @@ body {
 /* ===== Hero Header with FRC ASCII ===== */
 .hero-header {
     margin-bottom: 3rem;
-    padding: 2rem 0;
+    padding: 0 0 2rem 0;
     border-bottom: 2px solid var(--border-subtle);
     position: relative;
 }
@@ -207,7 +207,7 @@ body {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, var(--text-cyan) 0%, var(--text-amber) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--text-cyan) 33%, var(--text-amber) 66%, transparent 100%);
     opacity: 0.6;
 }
 
@@ -215,7 +215,7 @@ body {
     font-size: 0.60rem;
     line-height: 1;
     color: var(--text-cyan);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     white-space: pre;
     overflow: hidden;
     opacity: 0;
@@ -223,12 +223,15 @@ body {
     animation-delay: 0.3s;
     text-shadow: 0 0 10px var(--text-cyan-glow);
     letter-spacing: 0;
+    text-align: center;
+    margin-left: -0.8em;
 }
 
 .hero-content {
-    padding-left: 1rem;
-    border-left: 3px solid var(--text-amber-dim);
+    /*padding-left: 1rem;
+    border-left: 3px solid var(--text-amber-dim);*/
     transition: border-color var(--transition-medium);
+    text-align: center;
 }
 
 .hero-content:hover {
@@ -240,7 +243,8 @@ body {
     font-weight: 700;
     font-size: 1.1rem;
     margin-bottom: 0.75rem;
-    display: flex;
+    /*display: flex;*/
+    display: none;
     align-items: center;
     gap: 0.5rem;
 }

@@ -156,7 +156,7 @@ const TRANSLATIONS = {
             memory: 'Memoria'
         },
         footer: {
-            version: 'DEVOS v1.1 — Franco Rule Calvi — 2026'
+            version: 'frulecalvi — 2026'
         }
     },
     en: {
@@ -315,7 +315,7 @@ const TRANSLATIONS = {
             memory: 'Memory'
         },
         footer: {
-            version: 'DEVOS v1.1 — Franco Rule Calvi — 2026'
+            version: 'frulecalvi — 2026'
         }
     }
 };
