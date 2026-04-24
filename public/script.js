@@ -783,22 +783,44 @@ function initSectionTracker() {
     // Exclude interactive section from active tracking
     const sections = document.querySelectorAll('.section[id]:not(#interactive)');
     
-    // Use different settings for mobile vs desktop
-    const isMobile = window.innerWidth <= 768;
+    let ticking = false;
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                sections.forEach(s => s.classList.remove('active'));
-                entry.target.classList.add('active');
+    function updateActiveSection() {
+        const viewportCenter = window.innerHeight / 2;
+        let closestSection = null;
+        let minDistance = Infinity;
+        
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            const sectionCenter = rect.top + (rect.height / 2);
+            const distance = Math.abs(sectionCenter - viewportCenter);
+            
+            // Only consider sections that are at least partially visible
+            if (rect.bottom > 0 && rect.top < window.innerHeight && distance < minDistance) {
+                minDistance = distance;
+                closestSection = section;
             }
         });
-    }, {
-        threshold: isMobile ? 0.15 : 0.25,
-        rootMargin: isMobile ? '-10% 0px -50% 0px' : '-15% 0px -55% 0px'
-    });
+        
+        if (closestSection) {
+            sections.forEach(s => s.classList.remove('active'));
+            closestSection.classList.add('active');
+        }
+        
+        ticking = false;
+    }
     
-    sections.forEach(section => observer.observe(section));
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(updateActiveSection);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    // Initial check
+    updateActiveSection();
 }
 
 // ===== Interactive Commands =====
