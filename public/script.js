@@ -786,6 +786,16 @@ function initSectionTracker() {
     let ticking = false;
     
     function updateActiveSection() {
+        // Si estamos cerca del top de la página, forzar la primera sección como activa
+        if (window.scrollY < 150) {
+            sections.forEach(s => s.classList.remove('active'));
+            if (sections.length > 0) {
+                sections[0].classList.add('active');
+            }
+            ticking = false;
+            return;
+        }
+        
         const viewportCenter = window.innerHeight / 2;
         let closestSection = null;
         let minDistance = Infinity;
