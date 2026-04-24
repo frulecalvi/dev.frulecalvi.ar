@@ -58,6 +58,21 @@ body::before {
     opacity: 0.6;
 }
 
+/* ===== Corner Glows ===== */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse 60% 110% at 30px 40px, rgba(0, 212, 255, 0.04) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 110% at calc(100% - 30px) 40px, rgba(255, 198, 77, 0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 9997;
+}
+
 /* ===== CRT Flicker Animation ===== */
 @keyframes crtFlicker {
     0% { opacity: 0.97; }
