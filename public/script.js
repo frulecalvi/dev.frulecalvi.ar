@@ -89,7 +89,7 @@ const TRANSLATIONS = {
             ecosintesis: {
                 role: 'Desarrollador Backend',
                 location: 'Híbrido',
-                period: '2023-Presente',
+                period: '2024-Presente',
                 items: [
                     'Diseño y desarrollo de sistema de reservas multipropósito',
                     'Pipeline CI/CD automatizado con Docker + Jenkins',
@@ -245,7 +245,7 @@ const TRANSLATIONS = {
             ecosintesis: {
                 role: 'Backend Developer',
                 location: 'Hybrid',
-                period: '2023-Present',
+                period: '2024-Present',
                 items: [
                     'Design and development of multi-purpose reservation system',
                     'Automated CI/CD pipeline with Docker + Jenkins',
